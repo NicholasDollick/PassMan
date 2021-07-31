@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 F:\Personal\Secure Manager\QNTM\WPFUserInterface\App.xaml
-10115324181
+12202359836
 4440976654
-34-1278770403
+36-125654612
 18-1653969732
-Custom Controls\ChatList.xaml;Custom Controls\Conversation.xaml;Custom Controls\MenuListControl.xaml;Custom Controls\ProfileButton.xaml;MainWindow.xaml;Views\ChatPage.xaml;Views\CustomNavigationMenu.xaml;Views\LoginPageView.xaml;Views\MainChatPageView.xaml;Views\RegistrationPageView.xaml;
+Custom Controls\ChatList.xaml;Custom Controls\Conversation.xaml;Custom Controls\MenuListControl.xaml;Custom Controls\ProfileButton.xaml;MainWindow.xaml;Views\ChatPage.xaml;Views\CustomNavigationMenu.xaml;Views\GeneratorPageView.xaml;Views\LoginPageView.xaml;Views\MainChatPageView.xaml;Views\RegistrationPageView.xaml;Views\VaultPageView.xaml;
 
 True
 
