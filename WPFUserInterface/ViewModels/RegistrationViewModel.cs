@@ -22,6 +22,7 @@ namespace WPFUserInterface.ViewModels
             _canExecute = true;
             RegisterCommand = new RelayCommand(AttemptRegister, param => this._canExecute);
             CreateAccountCommand = new RelayCommand(ChangePageToLogin, param => true);
+            CancelCommand = new RelayCommand(ChangePageToLogin, param => true);
 
             this._username = "";
         }
@@ -115,6 +116,7 @@ namespace WPFUserInterface.ViewModels
             }
         }
         public ICommand CreateAccountCommand { get; set; }
+        public ICommand CancelCommand { get; set; }
         #endregion
     }
 }

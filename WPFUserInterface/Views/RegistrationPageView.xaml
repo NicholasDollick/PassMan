@@ -94,12 +94,18 @@
 
                         <PasswordBox Grid.Column="1" Foreground="{StaticResource OnBackgroundColor}"
                              Background="{StaticResource WidgetColorA}" x:Name="passBox"
-                               BorderThickness="0" Password="asdf" VerticalAlignment="Center"
+                               BorderThickness="0" Password="" VerticalAlignment="Center"
                              FontWeight="SemiBold" Height="20">
                             <PasswordBox.InputBindings>
                                 <KeyBinding Command="{Binding RegisterCommand}"
-                                            CommandParameter="{Binding ElementName=passBox}" 
-                                            Key="Return"/>
+                                            Key="Return">
+                                    <KeyBinding.CommandParameter>
+                                        <MultiBinding Converter="{StaticResource converter}">
+                                            <Binding ElementName="passBox"/>
+                                            <Binding ElementName="confPassBox"/>
+                                        </MultiBinding>
+                                    </KeyBinding.CommandParameter>
+                                </KeyBinding>
                             </PasswordBox.InputBindings>
                         </PasswordBox>
                     </Grid>
@@ -119,13 +125,19 @@
 
                         <PasswordBox Grid.Column="1" Foreground="{StaticResource OnBackgroundColor}"
                              Background="{StaticResource WidgetColorA}" x:Name="confPassBox"
-                               BorderThickness="0" Password="efefes" VerticalAlignment="Center"
+                               BorderThickness="0" Password="" VerticalAlignment="Center"
                              FontWeight="SemiBold" Height="20">
                         <PasswordBox.InputBindings>
                             <KeyBinding Command="{Binding RegisterCommand}"
-                                            CommandParameter="{Binding ElementName=confPassBox}" 
-                                            Key="Return"/>
-                        </PasswordBox.InputBindings>
+                                            Key="Return">
+                                    <KeyBinding.CommandParameter>
+                                        <MultiBinding Converter="{StaticResource converter}">
+                                            <Binding ElementName="passBox"/>
+                                            <Binding ElementName="confPassBox"/>
+                                        </MultiBinding>
+                                    </KeyBinding.CommandParameter>
+                                </KeyBinding>
+                            </PasswordBox.InputBindings>
                         </PasswordBox>
                     </Grid>
                 </Border>
@@ -161,7 +173,7 @@
                     </Button.Template>
                 </Button>
                 <Button Content="Cancel" Foreground="{StaticResource OnPrimaryColor}" FontSize="14" FontWeight="Medium"
-                    Margin="0 10 0 0">
+                    Margin="0 10 0 0" Command="{Binding CancelCommand}">
                     <Button.Style>
                         <Style TargetType="Button">
                             <!--<Setter Property="TextElement.FontFamily" Value=""/>-->
