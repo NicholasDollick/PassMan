@@ -1,0 +1,76 @@
+F:\Personal\qntm\QNTM-WPF\QNTM\WPFUserInterface\bin\Debug\WPFUserInterface.exe.config
+F:\Personal\qntm\QNTM-WPF\QNTM\WPFUserInterface\bin\Debug\WPFUserInterface.exe
+F:\Personal\qntm\QNTM-WPF\QNTM\WPFUserInterface\bin\Debug\WPFUserInterface.pdb
+F:\Personal\qntm\QNTM-WPF\QNTM\WPFUserInterface\obj\Debug\WPFUserInterface.csprojAssemblyReference.cache
+F:\Personal\qntm\QNTM-WPF\QNTM\WPFUserInterface\obj\Debug\MainWindow.g.cs
+F:\Personal\qntm\QNTM-WPF\QNTM\WPFUserInterface\obj\Debug\Views\LoginPageView.g.cs
+F:\Personal\qntm\QNTM-WPF\QNTM\WPFUserInterface\obj\Debug\Views\RegistrationPageView.g.cs
+F:\Personal\qntm\QNTM-WPF\QNTM\WPFUserInterface\obj\Debug\App.g.cs
+F:\Personal\qntm\QNTM-WPF\QNTM\WPFUserInterface\obj\Debug\WPFUserInterface_MarkupCompile.cache
+F:\Personal\qntm\QNTM-WPF\QNTM\WPFUserInterface\obj\Debug\WPFUserInterface_MarkupCompile.lref
+F:\Personal\qntm\QNTM-WPF\QNTM\WPFUserInterface\obj\Debug\App.baml
+F:\Personal\qntm\QNTM-WPF\QNTM\WPFUserInterface\obj\Debug\MainWindow.baml
+F:\Personal\qntm\QNTM-WPF\QNTM\WPFUserInterface\obj\Debug\Views\LoginPageView.baml
+F:\Personal\qntm\QNTM-WPF\QNTM\WPFUserInterface\obj\Debug\Views\RegistrationPageView.baml
+F:\Personal\qntm\QNTM-WPF\QNTM\WPFUserInterface\obj\Debug\WPFUserInterface.g.resources
+F:\Personal\qntm\QNTM-WPF\QNTM\WPFUserInterface\obj\Debug\WPFUserInterface.Properties.Resources.resources
+F:\Personal\qntm\QNTM-WPF\QNTM\WPFUserInterface\obj\Debug\WPFUserInterface.csproj.GenerateResource.cache
+F:\Personal\qntm\QNTM-WPF\QNTM\WPFUserInterface\obj\Debug\WPFUserInterface.exe
+F:\Personal\qntm\QNTM-WPF\QNTM\WPFUserInterface\obj\Debug\WPFUserInterface.pdb
+F:\Personal\qntm\QNTM-WPF\QNTM\WPFUserInterface\obj\Debug\GeneratedInternalTypeHelper.g.cs
+F:\Personal\qntm\QNTM-WPF\QNTM\WPFUserInterface\obj\Debug\Custom Controls\MenuListControl.g.cs
+F:\Personal\qntm\QNTM-WPF\QNTM\WPFUserInterface\obj\Debug\Custom Controls\ProfileButton.g.cs
+F:\Personal\qntm\QNTM-WPF\QNTM\WPFUserInterface\obj\Debug\Views\MainChatPageView.g.cs
+F:\Personal\qntm\QNTM-WPF\QNTM\WPFUserInterface\obj\Debug\Custom Controls\MenuListControl.baml
+F:\Personal\qntm\QNTM-WPF\QNTM\WPFUserInterface\obj\Debug\Custom Controls\ProfileButton.baml
+F:\Personal\qntm\QNTM-WPF\QNTM\WPFUserInterface\obj\Debug\Views\MainChatPageView.baml
+F:\Personal\qntm\QNTM-WPF\QNTM\WPFUserInterface\obj\Debug\Custom Controls\ChatList.g.cs
+F:\Personal\qntm\QNTM-WPF\QNTM\WPFUserInterface\obj\Debug\Custom Controls\ChatList.baml
+F:\Personal\qntm\QNTM-WPF\QNTM\WPFUserInterface\obj\Debug\Custom Controls\Conversation.g.cs
+F:\Personal\qntm\QNTM-WPF\QNTM\WPFUserInterface\obj\Debug\Custom Controls\Conversation.baml
+F:\Personal\qntm\QNTM-WPF\QNTM\WPFUserInterface\obj\Debug\Views\ChatPage.g.cs
+F:\Personal\qntm\QNTM-WPF\QNTM\WPFUserInterface\obj\Debug\Views\ChatPage.baml
+F:\Personal\qntm\QNTM-WPF\QNTM\WPFUserInterface\obj\Debug\Views\CustomNavigationMenu.g.cs
+F:\Personal\qntm\QNTM-WPF\QNTM\WPFUserInterface\obj\Debug\Views\CustomNavigationMenu.baml
+F:\Personal\Secure Manager\QNTM\WPFUserInterface\bin\Debug\WPFUserInterface.exe.config
+F:\Personal\Secure Manager\QNTM\WPFUserInterface\bin\Debug\WPFUserInterface.exe
+F:\Personal\Secure Manager\QNTM\WPFUserInterface\bin\Debug\WPFUserInterface.pdb
+F:\Personal\Secure Manager\QNTM\WPFUserInterface\obj\Debug\WPFUserInterface.csprojAssemblyReference.cache
+F:\Personal\Secure Manager\QNTM\WPFUserInterface\obj\Debug\Custom Controls\ChatList.g.cs
+F:\Personal\Secure Manager\QNTM\WPFUserInterface\obj\Debug\Custom Controls\Conversation.g.cs
+F:\Personal\Secure Manager\QNTM\WPFUserInterface\obj\Debug\Custom Controls\MenuListControl.g.cs
+F:\Personal\Secure Manager\QNTM\WPFUserInterface\obj\Debug\Custom Controls\ProfileButton.g.cs
+F:\Personal\Secure Manager\QNTM\WPFUserInterface\obj\Debug\MainWindow.g.cs
+F:\Personal\Secure Manager\QNTM\WPFUserInterface\obj\Debug\Views\ChatPage.g.cs
+F:\Personal\Secure Manager\QNTM\WPFUserInterface\obj\Debug\Views\CustomNavigationMenu.g.cs
+F:\Personal\Secure Manager\QNTM\WPFUserInterface\obj\Debug\Views\LoginPageView.g.cs
+F:\Personal\Secure Manager\QNTM\WPFUserInterface\obj\Debug\Views\MainChatPageView.g.cs
+F:\Personal\Secure Manager\QNTM\WPFUserInterface\obj\Debug\Views\RegistrationPageView.g.cs
+F:\Personal\Secure Manager\QNTM\WPFUserInterface\obj\Debug\App.g.cs
+F:\Personal\Secure Manager\QNTM\WPFUserInterface\obj\Debug\GeneratedInternalTypeHelper.g.cs
+F:\Personal\Secure Manager\QNTM\WPFUserInterface\obj\Debug\WPFUserInterface_MarkupCompile.cache
+F:\Personal\Secure Manager\QNTM\WPFUserInterface\obj\Debug\WPFUserInterface_MarkupCompile.lref
+F:\Personal\Secure Manager\QNTM\WPFUserInterface\obj\Debug\App.baml
+F:\Personal\Secure Manager\QNTM\WPFUserInterface\obj\Debug\Custom Controls\ChatList.baml
+F:\Personal\Secure Manager\QNTM\WPFUserInterface\obj\Debug\Custom Controls\Conversation.baml
+F:\Personal\Secure Manager\QNTM\WPFUserInterface\obj\Debug\Custom Controls\MenuListControl.baml
+F:\Personal\Secure Manager\QNTM\WPFUserInterface\obj\Debug\Custom Controls\ProfileButton.baml
+F:\Personal\Secure Manager\QNTM\WPFUserInterface\obj\Debug\MainWindow.baml
+F:\Personal\Secure Manager\QNTM\WPFUserInterface\obj\Debug\Views\ChatPage.baml
+F:\Personal\Secure Manager\QNTM\WPFUserInterface\obj\Debug\Views\CustomNavigationMenu.baml
+F:\Personal\Secure Manager\QNTM\WPFUserInterface\obj\Debug\Views\LoginPageView.baml
+F:\Personal\Secure Manager\QNTM\WPFUserInterface\obj\Debug\Views\MainChatPageView.baml
+F:\Personal\Secure Manager\QNTM\WPFUserInterface\obj\Debug\Views\RegistrationPageView.baml
+F:\Personal\Secure Manager\QNTM\WPFUserInterface\obj\Debug\WPFUserInterface.g.resources
+F:\Personal\Secure Manager\QNTM\WPFUserInterface\obj\Debug\WPFUserInterface.Properties.Resources.resources
+F:\Personal\Secure Manager\QNTM\WPFUserInterface\obj\Debug\WPFUserInterface.csproj.GenerateResource.cache
+F:\Personal\Secure Manager\QNTM\WPFUserInterface\obj\Debug\WPFUserInterface.exe
+F:\Personal\Secure Manager\QNTM\WPFUserInterface\obj\Debug\WPFUserInterface.pdb
+F:\Personal\Secure Manager\QNTM\WPFUserInterface\bin\Debug\QNTMDB.mdf
+F:\Personal\Secure Manager\QNTM\WPFUserInterface\bin\Debug\QNTMDB_log.ldf
+F:\Personal\Secure Manager\QNTM\WPFUserInterface\bin\Debug\EntityFramework.dll
+F:\Personal\Secure Manager\QNTM\WPFUserInterface\bin\Debug\EntityFramework.SqlServer.dll
+F:\Personal\Secure Manager\QNTM\WPFUserInterface\bin\Debug\EntityFramework.xml
+F:\Personal\Secure Manager\QNTM\WPFUserInterface\bin\Debug\EntityFramework.SqlServer.xml
+F:\Personal\Secure Manager\QNTM\WPFUserInterface\obj\Debug\WPFUserInterface_Content.g.cs
+F:\Personal\Secure Manager\QNTM\WPFUserInterface\obj\Debug\WPFUserInterface.csproj.CopyComplete

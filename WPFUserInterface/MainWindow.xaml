@@ -1,0 +1,119 @@
+﻿<NavigationWindow x:Class="WPFUserInterface.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFUserInterface"
+        xmlns:views="clr-namespace:WPFUserInterface.Views"
+        Source="Views/LoginPageView.xaml"
+        Loaded="QNTMWindow_Loaded"
+        Closing="QNTMWindow_Closing"
+        Deactivated="NavigationWindow_Deactivated"
+        mc:Ignorable="d"
+        Title="QNTM" Height="600" Width="1000" 
+        ShowsNavigationUI="False"
+>
+   
+
+    <NavigationWindow.Style>
+        <Style TargetType="{x:Type NavigationWindow}">
+            <Setter Property="Title" Value="Vigitron NeTester"/>
+        </Style>
+    </NavigationWindow.Style>
+    
+    <!--<Grid  Background="{StaticResource ResourceKey=BackgroundColor}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Background="{StaticResource Border}" Grid.ColumnSpan="2" MouseDown="Grid_MouseDown">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Image Grid.Column="0" Source="Images/icon.ico" Margin="2"/>
+
+            <TextBlock Text="{StaticResource AppName}" Foreground="{StaticResource OnBackgroundColor}" Grid.Column="1"
+                       VerticalAlignment="Center" HorizontalAlignment="Center" 
+                       Padding="0 0 10 0"/>
+
+            --><!--<TextBlock Text="Menu" Foreground="{StaticResource OnBackgroundColor}" Grid.Column="2"
+                       VerticalAlignment="Center" HorizontalAlignment="Center" 
+                       Padding="10 0 0 0"/>
+
+            <TextBlock Text="Other" Foreground="{StaticResource OnBackgroundColor}" Grid.Column="3"
+                       VerticalAlignment="Center" HorizontalAlignment="Center" 
+                       Padding="0 0 10 0"/>-->
+
+            <!--not sure if this button is really needed-->
+            <!--<Button Content="Start" Foreground="White" FontSize="11" 
+                    FontWeight="Medium" Grid.Column="10" Grid.ColumnSpan="2">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        --><!--<Setter Property="TextElement.FontFamily" Value=""/>--><!--
+                        <Setter Property="Background" Value="#FF0266"/>
+                        <Setter Property="Cursor" Value="Hand"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#FF7597"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="65" Height="15" CornerRadius="8"
+                                    Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>--><!--
+
+            <Button Content="X" Foreground="{StaticResource OnBackgroundColor}" FontSize="11" 
+                    FontWeight="Bold" Grid.Column="12" Grid.ColumnSpan="2" Click="Button_Click">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        --><!--<Setter Property="TextElement.FontFamily" Value=""/>--><!--
+                        <Setter Property="Background" Value="{StaticResource Border}"/>
+                        <Setter Property="Cursor" Value="Hand"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="{StaticResource Error}"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="15" Height="15" CornerRadius="0"
+                                    Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+        </Grid>
+        
+        <Frame Grid.Row="1" Source="/Views/RegistrationPageView.xaml" 
+               NavigationUIVisibility="Hidden"/>
+    </Grid>-->
+</NavigationWindow>
