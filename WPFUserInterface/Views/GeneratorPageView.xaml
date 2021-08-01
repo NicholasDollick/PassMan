@@ -195,6 +195,29 @@
                                                       />
 
                                         </StackPanel>
+                                        <!--pass type selector-->
+                                        <StackPanel Orientation="Vertical" Margin="20 5 10 0">
+                                            <TextBlock Text="Password Type"
+                                                       Foreground="{StaticResource OnBackgroundColor}"
+                                                       FontWeight="SemiBold"
+                                                />
+                                            <Border Height="2" 
+                                                    Background="{StaticResource WidgetColorE}"
+                                                    Margin="0 5 0 0"/>
+                                            <RadioButton Content="Random String"
+                                                         Foreground="{StaticResource OnBackgroundColor}"
+                                                         FontSize="12"
+                                                         Background="{StaticResource SecondaryColor}"
+                                                         Margin="0 5 0 5"
+                                                         IsChecked="True"
+                                                         />
+                                            <RadioButton Content="Diceware"
+                                                         Foreground="{StaticResource OnBackgroundColor}"
+                                                         FontSize="12"
+                                                         Background="{StaticResource SecondaryColor}"
+                                                         Margin="0 0 0 5"
+                                                         />
+                                        </StackPanel>
                                     </StackPanel>
                                 </StackPanel>
 
