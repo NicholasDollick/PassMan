@@ -51,7 +51,7 @@
 
         </Grid>
         <Grid Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2">
-            <Grid Margin="60" Background="{StaticResource WidgetColorC}">
+            <Grid Margin="40" Background="{StaticResource WidgetColorC}">
                 <StackPanel>
                     <TextBlock Text="QNTM PASSWORD GENERATOR"
                                Foreground="{StaticResource SecondaryColor}"
@@ -105,18 +105,115 @@
                                         Background="{StaticResource WidgetColorE}"
                                         Margin="0 5 0 0"/>
                                     <!--container-->
-                                    <StackPanel Orientation="Horizontal">
+                                    <StackPanel Orientation="Horizontal" Margin="0 10 0 0">
                                         <!--length display-->
                                         <StackPanel Orientation="Vertical">
-                                            <StackPanel Orientation="Horizontal">
-                                                
+                                            <TextBlock Text="Password Length"
+                                                       Foreground="{StaticResource OnBackgroundColor}"
+                                                       FontWeight="SemiBold"
+                                                       Margin="2 0 0 0"
+                                                />
+                                            <StackPanel Orientation="Horizontal" Margin="5 5 0 0">
+                                                <TextBox Text="39"
+                                                         Foreground="{StaticResource OnBackgroundColor}"
+                                                         Background="{StaticResource WidgetColorA}"
+                                                         BorderBrush="{StaticResource WidgetColorE}"
+                                                         BorderThickness="2"
+                                                         Padding="8"
+                                                         >
+                                                </TextBox>
+                                                <!--TODO: style this-->
+                                                <Slider Width="200"
+                                                        Margin="10 10 0 0"
+                                                        Value="8"
+                                                        >
+
+                                                </Slider>
                                             </StackPanel>
+                                        </StackPanel>
+                                        <!--random options-->
+                                        <StackPanel Orientation="Vertical" Margin="10 10 10 10">
+                                            <RadioButton Content="Simple"
+                                                         Foreground="{StaticResource OnBackgroundColor}"
+                                                         FontSize="12"
+                                                         Margin="0 0 0 5"
+                                                         />
+                                            <RadioButton Content="Human Readable"
+                                                         Foreground="{StaticResource OnBackgroundColor}"
+                                                         FontSize="12"
+                                                         Margin="0 0 0 5"
+                                                         />
+                                            <RadioButton Content="All Characters"
+                                                         Foreground="{StaticResource OnBackgroundColor}"
+                                                         FontSize="12"
+                                                         IsChecked="True"
+                                                         Margin="0 0 0 5"
+                                                         />
+                                        </StackPanel>
+                                        <!--random charset options-->
+                                        <StackPanel Orientation="Vertical" Margin="10 10 0 0">
+                                            <CheckBox Content="Uppercase"
+                                                      Foreground="{StaticResource OnBackgroundColor}"
+                                                      Background="{StaticResource SecondaryColor}"
+                                                      BorderBrush="{StaticResource WidgetColorA}"
+                                                      FontWeight="SemiBold"
+                                                      Margin="0 0 0 5"
+                                                      IsChecked="True"
+                                                      />
+                                            <CheckBox Content="Lowercase"
+                                                      Foreground="{StaticResource OnBackgroundColor}"
+                                                      Background="{StaticResource SecondaryColor}"
+                                                      BorderBrush="{StaticResource WidgetColorA}"
+                                                      FontWeight="SemiBold"
+                                                      Margin="0 0 0 5"
+                                                      IsChecked="True"
+                                                      />
+                                            <CheckBox Content="Numbers"
+                                                      Foreground="{StaticResource OnBackgroundColor}"
+                                                      Background="{StaticResource SecondaryColor}"
+                                                      BorderBrush="{StaticResource WidgetColorA}"
+                                                      FontWeight="SemiBold"
+                                                      Margin="0 0 0 5"
+                                                      IsChecked="True"
+                                                      />
+                                            <CheckBox Content="Symbols"
+                                                      Foreground="{StaticResource OnBackgroundColor}"
+                                                      Background="{StaticResource SecondaryColor}"
+                                                      BorderBrush="{StaticResource WidgetColorA}"
+                                                      FontWeight="SemiBold"
+                                                      Margin="0 0 0 5"
+                                                      IsChecked="True"
+                                                      />
+
                                         </StackPanel>
                                     </StackPanel>
                                 </StackPanel>
+
                             </StackPanel>
+                            
                         </Grid>
+                        
                     </Grid>
+                    <Button Content="Copy Password"
+                            FontSize="13"
+                            FontWeight="Bold"
+                            Foreground="{StaticResource OnSecondaryColor}"
+                            Background="{StaticResource SecondaryColor}"
+                            Margin="20 10 0 0"
+                            Padding="0 5 0 5"
+                            Width="140"
+                            BorderThickness="0" 
+                            >
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border CornerRadius="10"
+                                        Padding="0 5 0 5"
+                                    Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
                 </StackPanel>
             </Grid>
         </Grid>
