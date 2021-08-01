@@ -41,7 +41,7 @@ namespace WPFUserInterface.ViewModels
             {
                 if (AuthenticateCredentials(this.Username, passwordBox.Password))
                 {
-                    ChangePageToChatView(null);
+                    ChangePageToVaultView(null);
                 }
                 else
                 {
@@ -111,10 +111,10 @@ namespace WPFUserInterface.ViewModels
             args.NextPage = typeof(RegistrationPageView);
             OnChangePage(args);
         }
-        public void ChangePageToChatView(object param)
+        public void ChangePageToVaultView(object param)
         {
             ChangePageEventArgs args = new ChangePageEventArgs();
-            args.NextPage = typeof(MainChatPageView);
+            args.NextPage = typeof(GeneratorPageView);
             OnChangePage(args);
         }
 

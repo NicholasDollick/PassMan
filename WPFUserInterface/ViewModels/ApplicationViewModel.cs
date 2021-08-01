@@ -80,6 +80,28 @@ namespace WPFUserInterface.ViewModels
                 currentViewModel = e.NextPage;
                 ((MainChatPageViewModel)PageCollection.MainChatView.DataContext).LoadViewModel(e);
             }
+            else if (e.NextPage == typeof(VaultPageView))
+            {
+                if (PageCollection.VaultView == null)
+                {
+                    PageCollection.VaultView = new VaultPageView();
+                    ((VaultPageViewModel)PageCollection.VaultView.DataContext).ChangePage += PageChanged;
+                }
+                this.MainNavWindow.Navigate(PageCollection.VaultView);
+                currentViewModel = e.NextPage;
+                ((VaultPageViewModel)PageCollection.VaultView.DataContext).LoadViewModel(e);
+            }
+            else if (e.NextPage == typeof(GeneratorPageView))
+            {
+                if (PageCollection.GeneratorView == null)
+                {
+                    PageCollection.GeneratorView = new GeneratorPageView();
+                    ((GeneratorPageViewModel)PageCollection.GeneratorView.DataContext).ChangePage += PageChanged;
+                }
+                this.MainNavWindow.Navigate(PageCollection.GeneratorView);
+                currentViewModel = e.NextPage;
+                ((GeneratorPageViewModel)PageCollection.GeneratorView.DataContext).LoadViewModel(e);
+            }
             //else if(e.NextPage == typeof(ManageLibraryView))
             //{
             //    if(PageCollection.ManageLibraryView == null)

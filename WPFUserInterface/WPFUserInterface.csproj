@@ -131,10 +131,12 @@
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\ChatListViewModel.cs" />
     <Compile Include="ViewModels\ConversationViewModel.cs" />
+    <Compile Include="ViewModels\GeneratorPageViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\MainChatPageViewModel.cs" />
     <Compile Include="ViewModels\RegistrationViewModel.cs" />
     <Compile Include="ViewModels\VaultListViewModel.cs" />
+    <Compile Include="ViewModels\VaultPageViewModel.cs" />
     <Compile Include="Views\ChatPage.xaml.cs">
       <DependentUpon>ChatPage.xaml</DependentUpon>
     </Compile>
