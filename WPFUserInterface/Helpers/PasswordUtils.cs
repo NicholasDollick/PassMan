@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography;
+﻿using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace WPFUserInterface.Helpers
 {
     class PasswordUtils
     {
-        private static string GenerateStringPass(int passLength, string passType)
+        public static string GenerateStringPass(int passLength, string passType)
         {
             string CapitalLetters = "QWERTYUIOPASDFGHJKLZXCVBNM";
             string SmallLetters = "qwertyuiopasdfghjklzxcvbnm";
