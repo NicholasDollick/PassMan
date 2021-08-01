@@ -28,6 +28,8 @@ namespace WPFUserInterface.ViewModels
             OnChangePage(args);
         }
 
+        #region Props
         public ICommand GoToVaultCommand { get; set; }
+        #endregion
     }
 }

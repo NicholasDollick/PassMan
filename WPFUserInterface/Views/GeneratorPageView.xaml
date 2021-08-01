@@ -134,10 +134,9 @@
                                                 <!--TODO: style this-->
                                                 <Slider Width="200"
                                                         Margin="10 10 0 0"
-                                                        Value="8"
-                                                        >
-
-                                                </Slider>
+                                                        Value="39"
+                                                        Maximum="100"
+                                                        />
                                             </StackPanel>
                                         </StackPanel>
                                         <!--random options-->
