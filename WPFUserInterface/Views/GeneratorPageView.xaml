@@ -50,8 +50,75 @@
                        Padding="0 0 10 0" FontWeight="Bold"/>
 
         </Grid>
-        <Grid Grid.Column="0" Grid.Row="1">
+        <Grid Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2">
+            <Grid Margin="60" Background="{StaticResource WidgetColorC}">
+                <StackPanel>
+                    <TextBlock Text="QNTM PASSWORD GENERATOR"
+                               Foreground="{StaticResource SecondaryColor}"
+                               HorizontalAlignment="Center"
+                               Margin="0 10 0 0"
+                               FontWeight="DemiBold"/>
+                    <TextBlock Text="Generate a secure password"
+                               Foreground="{StaticResource OnBackgroundColor}"
+                               HorizontalAlignment="Center"
+                               FontSize="20"
+                               FontWeight="Bold"/>
 
+                    <Grid Background="{StaticResource WidgetColorE}" Margin="10 10 10 0">
+                        <Grid Background="{StaticResource WidgetColorA}" Margin="2">
+                            <StackPanel Margin="10 5 0 0">
+                                <StackPanel Orientation="Horizontal" Margin="0 10 0 10">
+                                    <TextBox Foreground="{StaticResource OnBackgroundColor}"
+                                         Background="{StaticResource WidgetColorA}"
+                                         Text="aX%e$LtuHDoXo97dRY9aS%PI8Nlb89LGvVDFRpu"
+                                         BorderThickness="0"
+                                             FontSize="16"
+                                         Width="400">
+                                    </TextBox>
+                                    <!--these are gonna be a problem w/spacing-->
+                                    <Button Content="CPY"
+                                            HorizontalAlignment="Right"
+                                            Margin="100 0 0 0">
+
+                                    </Button>
+                                    <Button Content="RDO"
+                                             HorizontalAlignment="Right"
+                                            Margin="10 0 0 0">
+
+                                    </Button>
+                                </StackPanel>
+                            </StackPanel>
+                        </Grid>
+                    </Grid>
+
+                    <Grid Background="{StaticResource WidgetColorE}" Margin="10 20 10 0">
+                        <Grid Background="{StaticResource WidgetColorA}" Margin="2">
+                            <StackPanel Margin="20 5 20 0">
+                                <StackPanel Orientation="Vertical" Margin="0 10 0 10">
+                                    <TextBlock Text="Customize your password"
+                                               Foreground="{StaticResource OnBackgroundColor}"
+                                               FontSize="19"
+                                               FontWeight="DemiBold"
+                                               Margin="2 0 0 0"
+                                               />
+                                    <Border Height="2" 
+                                        Background="{StaticResource WidgetColorE}"
+                                        Margin="0 5 0 0"/>
+                                    <!--container-->
+                                    <StackPanel Orientation="Horizontal">
+                                        <!--length display-->
+                                        <StackPanel Orientation="Vertical">
+                                            <StackPanel Orientation="Horizontal">
+                                                
+                                            </StackPanel>
+                                        </StackPanel>
+                                    </StackPanel>
+                                </StackPanel>
+                            </StackPanel>
+                        </Grid>
+                    </Grid>
+                </StackPanel>
+            </Grid>
         </Grid>
     </Grid>
 </Page>
