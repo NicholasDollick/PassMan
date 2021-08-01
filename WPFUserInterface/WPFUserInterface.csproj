@@ -97,6 +97,9 @@
     <Compile Include="Custom Controls\ProfileButton.xaml.cs">
       <DependentUpon>ProfileButton.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Custom Controls\VaultList.xaml.cs">
+      <DependentUpon>VaultList.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Helpers\ChangePageEventArgs.cs" />
     <Compile Include="Helpers\CryptUtils.cs" />
     <Compile Include="Helpers\MultiPassBoxConverter.cs" />
@@ -123,6 +126,7 @@
     <Compile Include="Models\User.cs">
       <DependentUpon>QNTMDataModels.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\VaultItem.cs" />
     <Compile Include="ViewModels\ApplicationViewModel.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\ChatListViewModel.cs" />
@@ -130,11 +134,15 @@
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\MainChatPageViewModel.cs" />
     <Compile Include="ViewModels\RegistrationViewModel.cs" />
+    <Compile Include="ViewModels\VaultListViewModel.cs" />
     <Compile Include="Views\ChatPage.xaml.cs">
       <DependentUpon>ChatPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\CustomNavigationMenu.xaml.cs">
       <DependentUpon>CustomNavigationMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\GeneratorPageView.xaml.cs">
+      <DependentUpon>GeneratorPageView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\LoginPageView.xaml.cs">
       <DependentUpon>LoginPageView.xaml</DependentUpon>
@@ -144,6 +152,9 @@
     </Compile>
     <Compile Include="Views\RegistrationPageView.xaml.cs">
       <DependentUpon>RegistrationPageView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\VaultPageView.xaml.cs">
+      <DependentUpon>VaultPageView.xaml</DependentUpon>
     </Compile>
     <Page Include="Custom Controls\ChatList.xaml">
       <SubType>Designer</SubType>
@@ -158,6 +169,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Custom Controls\ProfileButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Custom Controls\VaultList.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -181,6 +196,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\GeneratorPageView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\LoginPageView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -190,6 +209,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\RegistrationPageView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\VaultPageView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

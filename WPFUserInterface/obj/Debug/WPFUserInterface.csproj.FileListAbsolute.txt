@@ -74,3 +74,9 @@ F:\Personal\Secure Manager\QNTM\WPFUserInterface\bin\Debug\EntityFramework.xml
 F:\Personal\Secure Manager\QNTM\WPFUserInterface\bin\Debug\EntityFramework.SqlServer.xml
 F:\Personal\Secure Manager\QNTM\WPFUserInterface\obj\Debug\WPFUserInterface_Content.g.cs
 F:\Personal\Secure Manager\QNTM\WPFUserInterface\obj\Debug\WPFUserInterface.csproj.CopyComplete
+F:\Personal\Secure Manager\QNTM\WPFUserInterface\obj\Debug\Views\GeneratorPageView.g.cs
+F:\Personal\Secure Manager\QNTM\WPFUserInterface\obj\Debug\Views\VaultPageView.g.cs
+F:\Personal\Secure Manager\QNTM\WPFUserInterface\obj\Debug\Custom Controls\VaultList.g.cs
+F:\Personal\Secure Manager\QNTM\WPFUserInterface\obj\Debug\Custom Controls\VaultList.baml
+F:\Personal\Secure Manager\QNTM\WPFUserInterface\obj\Debug\Views\GeneratorPageView.baml
+F:\Personal\Secure Manager\QNTM\WPFUserInterface\obj\Debug\Views\VaultPageView.baml
