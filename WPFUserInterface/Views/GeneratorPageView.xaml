@@ -44,7 +44,11 @@
 
             <TextBlock Text="Vault" Foreground="#FFBBBBBB" Grid.Column="1"
                        VerticalAlignment="Center" HorizontalAlignment="Center" 
-                       Padding="10 0 10 0" FontWeight="Bold"/>
+                       Padding="10 0 10 0" FontWeight="Bold">
+                <TextBlock.InputBindings>
+                    <MouseBinding Command="{Binding GoToVaultCommand}" MouseAction="LeftClick"/>
+                </TextBlock.InputBindings>
+            </TextBlock>
 
             <TextBlock Text="Generator" Foreground="{StaticResource OnBackgroundColor}" Grid.Column="2"
                        VerticalAlignment="Center" HorizontalAlignment="Center" 

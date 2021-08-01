@@ -114,7 +114,7 @@ namespace WPFUserInterface.ViewModels
         public void ChangePageToVaultView(object param)
         {
             ChangePageEventArgs args = new ChangePageEventArgs();
-            args.NextPage = typeof(GeneratorPageView);
+            args.NextPage = typeof(VaultPageView);
             OnChangePage(args);
         }
 
