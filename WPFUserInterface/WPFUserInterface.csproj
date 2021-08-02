@@ -103,6 +103,7 @@
     <Compile Include="Helpers\ChangePageEventArgs.cs" />
     <Compile Include="Helpers\CryptUtils.cs" />
     <Compile Include="Helpers\MultiPassBoxConverter.cs" />
+    <Compile Include="Helpers\PasswordUtils.cs" />
     <Compile Include="Helpers\RelayCommand.cs" />
     <Compile Include="Models\ChatListItems.cs" />
     <Compile Include="Models\ChatMessages.cs" />

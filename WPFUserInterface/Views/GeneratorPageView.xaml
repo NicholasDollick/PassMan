@@ -79,7 +79,7 @@
                                 <StackPanel Orientation="Horizontal" Margin="0 10 0 10">
                                     <TextBox Foreground="{StaticResource OnBackgroundColor}"
                                          Background="{StaticResource WidgetColorA}"
-                                         Text="aX%e$LtuHDoXo97dRY9aS%PI8Nlb89LGvVDFRpu"
+                                         Text="{Binding Password}"
                                          BorderThickness="0"
                                              FontSize="16"
                                          Width="400">
@@ -87,12 +87,16 @@
                                     <!--these are gonna be a problem w/spacing-->
                                     <Button Content="CPY"
                                             HorizontalAlignment="Right"
-                                            Margin="100 0 0 0">
+                                            Margin="100 0 0 0"
+                                            Command="{Binding CopyPasswordCommand}"
+                                            >
 
                                     </Button>
                                     <Button Content="RDO"
                                              HorizontalAlignment="Right"
-                                            Margin="10 0 0 0">
+                                            Margin="10 0 0 0"
+                                            Command="{Binding ReGenerateCommand}"
+                                            >
 
                                     </Button>
                                 </StackPanel>
@@ -123,7 +127,7 @@
                                                        Margin="2 0 0 0"
                                                 />
                                             <StackPanel Orientation="Horizontal" Margin="5 5 0 0">
-                                                <TextBox Text="39"
+                                                <TextBox Text="{Binding PasswordLength, Mode=TwoWay}"
                                                          Foreground="{StaticResource OnBackgroundColor}"
                                                          Background="{StaticResource WidgetColorA}"
                                                          BorderBrush="{StaticResource WidgetColorE}"
@@ -134,8 +138,9 @@
                                                 <!--TODO: style this-->
                                                 <Slider Width="200"
                                                         Margin="10 10 0 0"
-                                                        Value="39"
+                                                        Value="{Binding PasswordLength, Mode=TwoWay}"
                                                         Maximum="100"
+                                                        Minimum="1"
                                                         />
                                             </StackPanel>
                                         </StackPanel>
@@ -145,16 +150,18 @@
                                                          Foreground="{StaticResource OnBackgroundColor}"
                                                          FontSize="12"
                                                          Margin="0 0 0 5"
+                                                         IsChecked="{Binding IsSimple}"
                                                          />
                                             <RadioButton Content="Human Readable"
                                                          Foreground="{StaticResource OnBackgroundColor}"
                                                          FontSize="12"
                                                          Margin="0 0 0 5"
+                                                         IsChecked="{Binding IsReadable}"
                                                          />
                                             <RadioButton Content="All Characters"
                                                          Foreground="{StaticResource OnBackgroundColor}"
                                                          FontSize="12"
-                                                         IsChecked="True"
+                                                         IsChecked="{Binding IsAll}"
                                                          Margin="0 0 0 5"
                                                          />
                                         </StackPanel>
@@ -234,6 +241,7 @@
                             Padding="0 5 0 5"
                             Width="140"
                             BorderThickness="0" 
+                            Command="{Binding CopyPasswordCommand}"
                             >
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
