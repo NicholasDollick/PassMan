@@ -85,7 +85,17 @@
                             <!--<Border Background="White"/>-->
                         </Grid>
                         <Grid Grid.Row="2" Background="{StaticResource WidgetColorE}">
-                            <Button Margin="10 8 10 8" Content="add thing">
+                            <Button Margin="10 8 10 8"
+                                    Content="&#xf067;"
+                                            FontFamily="{StaticResource FontAwesome}"
+                                            Command="{Binding CopyPasswordCommand}"
+                                            Foreground="{StaticResource SecondaryColor}"
+                                            Background="{StaticResource WidgetColorA}"
+                                            BorderThickness="1"
+                                            FontSize="18"
+                                             HorizontalAlignment="Center"
+                                    Width="170"
+                                    >
 
                             </Button>
                         </Grid>
@@ -141,12 +151,24 @@
                                          Width="200">
                                     </TextBox>
                                     <!--these are gonna be a problem w/spacing-->
-                                    <Button Content="OPN"
-                                            HorizontalAlignment="Right"
+                                    <Button Content="&#xf2d2;"
+                                            FontFamily="{StaticResource FontAwesome}"
+                                            Command="{Binding CopyPasswordCommand}"
+                                            Foreground="{StaticResource SecondaryColor}"
+                                            Background="{StaticResource WidgetColorA}"
+                                            BorderThickness="0"
+                                            FontSize="18"
+                                             HorizontalAlignment="Right"
                                             Margin="70 0 0 0">
                                         
                                     </Button>
-                                    <Button Content="CPY"
+                                    <Button Content="&#xf0c5;"
+                                            FontFamily="{StaticResource FontAwesome}"
+                                            Command="{Binding CopyPasswordCommand}"
+                                            Foreground="{StaticResource SecondaryColor}"
+                                            Background="{StaticResource WidgetColorA}"
+                                            BorderThickness="0"
+                                            FontSize="18"
                                              HorizontalAlignment="Right"
                                             Margin="10 0 0 0">
 
@@ -170,7 +192,13 @@
 
                                     </TextBox>
                                     <!--these are gonna be a problem w/spacing-->
-                                    <Button Content="CPY"
+                                    <Button Content="&#xf0c5;"
+                                            FontFamily="{StaticResource FontAwesome}"
+                                            Command="{Binding CopyPasswordCommand}"
+                                            Foreground="{StaticResource SecondaryColor}"
+                                            Background="{StaticResource WidgetColorA}"
+                                            BorderThickness="0"
+                                            FontSize="18"
                                              HorizontalAlignment="Right"
                                             Margin="110 0 0 0">
 
@@ -188,16 +216,29 @@
                                          Background="{StaticResource WidgetColorB}"
                                          Password="asdfasdfasdf"
                                           BorderThickness="0" 
-                                                 Width="200">
+                                                 Width="200"
+                                                 >
 
                                     </PasswordBox>
                                     <!--these are gonna be a problem w/spacing-->
-                                    <Button Content="SHW"
+                                    <Button Content="&#xf06e;"
+                                            FontFamily="{StaticResource FontAwesome}"
+                                            Command="{Binding CopyPasswordCommand}"
+                                            Foreground="{StaticResource SecondaryColor}"
+                                            Background="{StaticResource WidgetColorA}"
+                                            BorderThickness="0"
+                                            FontSize="18"
                                             HorizontalAlignment="Right"
                                             Margin="70 0 0 0">
 
                                     </Button>
-                                    <Button Content="CPY"
+                                    <Button Content="&#xf0c5;"
+                                            FontFamily="{StaticResource FontAwesome}"
+                                            Command="{Binding CopyPasswordCommand}"
+                                            Foreground="{StaticResource SecondaryColor}"
+                                            Background="{StaticResource WidgetColorA}"
+                                            BorderThickness="0"
+                                            FontSize="18"
                                              HorizontalAlignment="Right"
                                             Margin="10 0 0 0">
 
@@ -236,7 +277,19 @@
                     </StackPanel>
                 </Grid>
                 <Grid Grid.Row="1" Background="{StaticResource WidgetColorE}">
-                    <Button Margin="20 8 300 8" Content="save changes" Visibility="Visible">
+                    <Button Margin="20 8 300 8"
+                            Visibility="Visible"
+                            Content="&#xf14b;"
+                                            FontFamily="{StaticResource FontAwesome}"
+                                            Command="{Binding CopyPasswordCommand}"
+                                            Foreground="{StaticResource SecondaryColor}"
+                                            Background="{StaticResource WidgetColorA}"
+                                            BorderThickness="1"
+                                            FontSize="18"
+                                             HorizontalAlignment="Left"
+                            Height="30"
+                            Width="30"
+                            >
 
                     </Button>
                 </Grid>
