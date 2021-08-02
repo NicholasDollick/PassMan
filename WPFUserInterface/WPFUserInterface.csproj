@@ -242,6 +242,13 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>QNTMDataModels.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\fontawesome-webfont.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
     <None Include="Models\QNTMDataModels.edmx.diagram">
       <DependentUpon>QNTMDataModels.edmx</DependentUpon>
     </None>
@@ -278,6 +285,9 @@
     <Resource Include="Assets\wordlist.txt" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="Models\QNTMDataModels.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>QNTMDataModels.edmx</DependentUpon>

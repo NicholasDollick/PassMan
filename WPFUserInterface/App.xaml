@@ -31,6 +31,7 @@
 
             <sys:String x:Key="AppName">QNTM State</sys:String>
             <sys:String x:Key="FileAppName">QNTM State</sys:String>
+            <FontFamily x:Key="FontAwesome">/fonts\fontawesome-webfont.ttf#FontAwesome</FontFamily>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

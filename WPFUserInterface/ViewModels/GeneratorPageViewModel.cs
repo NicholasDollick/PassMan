@@ -20,7 +20,7 @@ namespace WPFUserInterface.ViewModels
             CopyPasswordCommand = new RelayCommand(CopyPassToClip, param => true);
             ReGenerateCommand = new RelayCommand(RegenPass, param => true);
 
-            PasswordLength = 1;
+            PasswordLength = 8;
             IsAll = true;
         }
 

@@ -40,7 +40,15 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
-            <Image Grid.Column="0" Source="Images/bank-building.png" Margin="2"/>
+            <TextBlock Grid.Column="0" 
+                       FontFamily="{StaticResource FontAwesome}" 
+                       Margin="2"
+                       Text="&#xf09c;"
+                       FontSize="25"
+                       Foreground="{StaticResource OnBackgroundColor}"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       />
 
             <TextBlock Text="Vault" Foreground="#FFBBBBBB" Grid.Column="1"
                        VerticalAlignment="Center" HorizontalAlignment="Center" 
@@ -85,15 +93,25 @@
                                          Width="400">
                                     </TextBox>
                                     <!--these are gonna be a problem w/spacing-->
-                                    <Button Content="CPY"
+                                    <Button Content="&#xf0c5;"
+                                            FontFamily="{StaticResource FontAwesome}"
                                             HorizontalAlignment="Right"
                                             Margin="100 0 0 0"
                                             Command="{Binding CopyPasswordCommand}"
+                                            Foreground="{StaticResource SecondaryColor}"
+                                            Background="{StaticResource WidgetColorA}"
+                                            BorderThickness="0"
+                                            FontSize="18"
                                             >
 
                                     </Button>
-                                    <Button Content="RDO"
-                                             HorizontalAlignment="Right"
+                                    <Button Content="&#xf01e;"
+                                            FontFamily="{StaticResource FontAwesome}"
+                                            HorizontalAlignment="Right"
+                                            Foreground="{StaticResource SecondaryColor}"
+                                            Background="{StaticResource WidgetColorA}"
+                                            BorderThickness="0"
+                                            FontSize="18"
                                             Margin="10 0 0 0"
                                             Command="{Binding ReGenerateCommand}"
                                             >
