@@ -73,10 +73,29 @@
                             <RowDefinition/>
                             <RowDefinition Height="40"/>
                         </Grid.RowDefinitions>
-                        <Grid Grid.Row="0" Background="{StaticResource PrimaryColor}">
-                            <TextBox Margin="7" Text="Search Vault">
+                        <Grid Grid.Row="0" Background="{StaticResource AccentColor}">
+                            <StackPanel Margin="7" Orientation="Horizontal" Background="{StaticResource AccentVariantColor}">
+                                <TextBlock Text="&#xf002;"
+                                           FontFamily="{StaticResource FontAwesome}"
+                                           VerticalAlignment="Center"
+                                           HorizontalAlignment="Center"
+                                           FontSize="15"
+                                           Margin="10 0 5 0"
+                                           Foreground="{StaticResource OnSecondaryColor}"
+                                />
+                                <TextBox  Text="Search Vault"
+                                          TextAlignment="Left"
+                                          Width="150"
+                                          VerticalAlignment="Center"
+                                          Height='20'
+                                          BorderThickness="0"
+                                          Foreground="{StaticResource OnAccentColor}"
+                                          Background="{StaticResource AccentVariantColor}"
+                                          >
 
-                            </TextBox>
+                                </TextBox>
+                            </StackPanel>
+
                         </Grid>
                         <Grid Grid.Row="1">
                             <ScrollViewer Background="LightGray">
@@ -170,7 +189,7 @@
                                             BorderThickness="0"
                                             FontSize="18"
                                              HorizontalAlignment="Right"
-                                            Margin="10 0 0 0">
+                                            Margin="15 0 0 0">
 
                                     </Button>
                                 </StackPanel>
@@ -240,7 +259,7 @@
                                             BorderThickness="0"
                                             FontSize="18"
                                              HorizontalAlignment="Right"
-                                            Margin="10 0 0 0">
+                                            Margin="20 0 0 0">
 
                                     </Button>
                                 </StackPanel>
@@ -277,8 +296,9 @@
                     </StackPanel>
                 </Grid>
                 <Grid Grid.Row="1" Background="{StaticResource WidgetColorE}">
-                    <Button Margin="20 8 300 8"
+                    <Button Margin="20 8 300 2"
                             Visibility="Visible"
+                            VerticalAlignment="Center"
                             Content="&#xf14b;"
                                             FontFamily="{StaticResource FontAwesome}"
                                             Command="{Binding CopyPasswordCommand}"
