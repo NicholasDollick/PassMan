@@ -38,7 +38,15 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
-            <Image Grid.Column="0" Source="Images/bank-building.png" Margin="2"/>
+            <TextBlock Grid.Column="0" 
+                       FontFamily="{StaticResource FontAwesome}" 
+                       Margin="2"
+                       Text="&#xf21b;"
+                       FontSize="25"
+                       Foreground="{StaticResource OnBackgroundColor}"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       />
 
             <TextBlock Text="Vault" Foreground="{StaticResource OnBackgroundColor}" Grid.Column="1"
                        VerticalAlignment="Center" HorizontalAlignment="Center" 

@@ -43,7 +43,7 @@
             <TextBlock Grid.Column="0" 
                        FontFamily="{StaticResource FontAwesome}" 
                        Margin="2"
-                       Text="&#xf09c;"
+                       Text="&#xf21b;"
                        FontSize="25"
                        Foreground="{StaticResource OnBackgroundColor}"
                        VerticalAlignment="Center"

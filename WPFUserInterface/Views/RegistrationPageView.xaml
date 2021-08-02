@@ -58,8 +58,15 @@
                         </Grid.ColumnDefinitions>
 
                         <!--Icon-->
-                        <Image Width="20" Height="20" 
-                                   Source="/Images/email.png"/>
+                        <TextBlock Grid.Column="0" 
+                       FontFamily="{StaticResource FontAwesome}" 
+                       Margin="2"
+                       Text="&#xf234;"
+                       FontSize="20"
+                       Foreground="{StaticResource OnBackgroundColor}"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       />
 
                         <TextBox Grid.Column="1" Foreground="{StaticResource OnBackgroundColor}"
                              Background="{StaticResource WidgetColorA}"
@@ -89,8 +96,15 @@
                         </Grid.ColumnDefinitions>
 
                         <!--Icon-->
-                        <Image Width="20" Height="20" 
-                                   Source="/Images/password-white.png"/>
+                        <TextBlock Grid.Column="0" 
+                       FontFamily="{StaticResource FontAwesome}" 
+                       Margin="2"
+                       Text="&#xf023;"
+                       FontSize="20"
+                       Foreground="{StaticResource OnBackgroundColor}"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       />
 
                         <PasswordBox Grid.Column="1" Foreground="{StaticResource OnBackgroundColor}"
                              Background="{StaticResource WidgetColorA}" x:Name="passBox"
