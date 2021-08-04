@@ -81,3 +81,5 @@ F:\Personal\Secure Manager\QNTM\WPFUserInterface\obj\Debug\Custom Controls\Vault
 F:\Personal\Secure Manager\QNTM\WPFUserInterface\obj\Debug\Views\GeneratorPageView.baml
 F:\Personal\Secure Manager\QNTM\WPFUserInterface\obj\Debug\Views\VaultPageView.baml
 F:\Personal\Secure Manager\QNTM\WPFUserInterface\bin\Debug\fonts\fontawesome-webfont.ttf
+F:\Personal\Secure Manager\QNTM\WPFUserInterface\obj\Debug\AddItemPrompt.g.cs
+F:\Personal\Secure Manager\QNTM\WPFUserInterface\obj\Debug\AddItemPrompt.baml

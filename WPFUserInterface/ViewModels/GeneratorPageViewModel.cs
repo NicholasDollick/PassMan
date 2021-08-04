@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
 using System.Windows;
 using System.Windows.Input;
 using WPFUserInterface.Helpers;
@@ -49,7 +52,7 @@ namespace WPFUserInterface.ViewModels
                 type = "simple";
 
             // this eventually should have the option to modify the charsets are well
-            Password = PasswordUtils.GenerateStringPass(PasswordLength, type);
+            Password = GenerateStringPass(PasswordLength, type);
         }
 
         private void RegenPass(object obj)
@@ -69,6 +72,50 @@ namespace WPFUserInterface.ViewModels
             }
         }
 
+        private string GenerateStringPass(int passLength, string passType)
+        {
+            string CapitalLetters = "QWERTYUIOPASDFGHJKLZXCVBNM";
+            string SmallLetters = "qwertyuiopasdfghjklzxcvbnm";
+            string Digits = "0123456789";
+            string SpecialCharacters = "!@#$%^&*()-_=+<,>.";
+            string AllChar = CapitalLetters + SmallLetters + Digits + SpecialCharacters;
+
+            string useSet = string.Empty;
+
+            // TODO: revisit what is considered to be readable chars...maybe ones you can easily say out loud?
+            if (passType.Equals("all"))
+                useSet = AllChar;
+            else if (passType.Equals("read"))
+                useSet = "QWERTYUIPASDFGHJKLZXCVBNMqwertyuiopasdfghjkzxcvbnm23456789!@#$%^&*()-_=+<,>.";
+            else if (passType.Equals("simple"))
+                useSet = CapitalLetters + SmallLetters;
+            else
+                return "";
+
+            StringBuilder sb = new StringBuilder();
+            for (int n = 0; n < passLength; n++)
+            {
+                sb = sb.Append(GenerateChar(useSet));
+            }
+
+            return sb.ToString();
+        }
+
+        private char GenerateChar(string availableChars)
+        {
+            var byteArray = new byte[1];
+            RNGCryptoServiceProvider provider = new RNGCryptoServiceProvider();
+            char c;
+            do
+            {
+                provider.GetBytes(byteArray);
+                c = (char)byteArray[0];
+
+            } while (!availableChars.Any(x => x == c));
+
+            return c;
+        }
+
         #region Props
         public ICommand GoToVaultCommand { get; set; }
         public ICommand CopyPasswordCommand { get; set; }
@@ -77,6 +124,19 @@ namespace WPFUserInterface.ViewModels
         public bool IsLowercase { get; set; }
         public bool IsNumbers { get; set; }
         public bool IsSymbols { get; set; }
+        public bool IsDice
+        {
+            get
+            {
+                return this._isDice;
+            }
+            set
+            {
+                _isDice = value;
+                OnPropertyChanged("IsDice");
+                // change a visibility prop to hide the checkboxes for random string
+            }
+        }
         public bool IsSimple
         {
             get

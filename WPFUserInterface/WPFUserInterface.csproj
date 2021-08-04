@@ -85,6 +85,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AddItemPrompt.xaml.cs">
+      <DependentUpon>AddItemPrompt.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Custom Controls\ChatList.xaml.cs">
       <DependentUpon>ChatList.xaml</DependentUpon>
     </Compile>
@@ -159,6 +162,10 @@
     <Compile Include="Views\VaultPageView.xaml.cs">
       <DependentUpon>VaultPageView.xaml</DependentUpon>
     </Compile>
+    <Page Include="AddItemPrompt.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Custom Controls\ChatList.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
