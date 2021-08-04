@@ -163,7 +163,8 @@
                                             </StackPanel>
                                         </StackPanel>
                                         <!--random options-->
-                                        <StackPanel Orientation="Vertical" Margin="10 10 10 10">
+                                        <StackPanel Orientation="Vertical" Margin="10 10 10 10"
+                                                    Visibility="{Binding StringControlVis}">
                                             <RadioButton Content="Simple"
                                                          Foreground="{StaticResource OnBackgroundColor}"
                                                          FontSize="12"
@@ -184,7 +185,8 @@
                                                          />
                                         </StackPanel>
                                         <!--random charset options-->
-                                        <StackPanel Orientation="Vertical" Margin="10 10 0 0">
+                                        <StackPanel Orientation="Vertical" Margin="10 10 0 0"
+                                                     Visibility="{Binding StringControlVis}">
                                             <CheckBox Content="Uppercase"
                                                       Foreground="{StaticResource OnBackgroundColor}"
                                                       Background="{StaticResource SecondaryColor}"
@@ -240,6 +242,7 @@
                                                          FontSize="12"
                                                          Background="{StaticResource SecondaryColor}"
                                                          Margin="0 0 0 5"
+                                                         IsChecked="{Binding IsDice}"
                                                          />
                                         </StackPanel>
                                     </StackPanel>

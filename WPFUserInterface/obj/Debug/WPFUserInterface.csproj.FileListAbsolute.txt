@@ -83,3 +83,4 @@ F:\Personal\Secure Manager\QNTM\WPFUserInterface\obj\Debug\Views\VaultPageView.b
 F:\Personal\Secure Manager\QNTM\WPFUserInterface\bin\Debug\fonts\fontawesome-webfont.ttf
 F:\Personal\Secure Manager\QNTM\WPFUserInterface\obj\Debug\AddItemPrompt.g.cs
 F:\Personal\Secure Manager\QNTM\WPFUserInterface\obj\Debug\AddItemPrompt.baml
+F:\Personal\Secure Manager\QNTM\WPFUserInterface\bin\Debug\Assets\wordlist.txt

@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
@@ -12,6 +14,7 @@ namespace WPFUserInterface.ViewModels
     class GeneratorPageViewModel : BaseViewModel
     {
         private string _pass;
+        private Dictionary<string, string> dict;
         private int _passLength;
         private bool _isSimple, _isRead, _isAll, _isUpper, _isLower, _isNum, _isSymb;
 
@@ -25,6 +28,15 @@ namespace WPFUserInterface.ViewModels
 
             PasswordLength = 8;
             IsAll = true;
+            StringControlVis = "Visible";
+            IsDice = false;
+            dict = new Dictionary<string, string>();
+            var arr = File.ReadAllLines(@"Assets/wordlist.txt");
+            foreach (string item in arr)
+            {
+                var temp = item.Split('\t');
+                dict.Add(temp[0], temp[1]);
+            }
         }
 
 
@@ -116,10 +128,38 @@ namespace WPFUserInterface.ViewModels
             return c;
         }
 
+        private void GenerateDiceware()
+        {
+            StringBuilder sb = new StringBuilder();
+            for (int n = 0; n < PasswordLength; n++)
+            {
+                string word;
+                dict.TryGetValue(rollDice(), out word);
+                sb = sb.Append(word);
+                sb.Append(" ");
+            }
+            Password = sb.ToString();
+        }
+
+        private string rollDice()
+        {
+            var res = string.Empty;
+            int rolls = 0;
+            CryptoRandom cr = new CryptoRandom();
+
+            while(rolls < 5)
+            {
+                res += cr.Next(1, 6).ToString();
+                rolls++;
+            }
+            return res;
+        }
+
         #region Props
         public ICommand GoToVaultCommand { get; set; }
         public ICommand CopyPasswordCommand { get; set; }
         public ICommand ReGenerateCommand { get; set; }
+        public string StringControlVis { get; set; }
         public bool IsUppercase { get; set; }
         public bool IsLowercase { get; set; }
         public bool IsNumbers { get; set; }
@@ -135,6 +175,19 @@ namespace WPFUserInterface.ViewModels
                 _isDice = value;
                 OnPropertyChanged("IsDice");
                 // change a visibility prop to hide the checkboxes for random string
+                if(_isDice == true)
+                {
+                    StringControlVis = "Hidden";
+                    OnPropertyChanged("StringControlVis");
+                    // change the pass gen to diceware here
+                    GenerateDiceware();
+                }
+                else
+                {
+                    StringControlVis = "Visible";
+                    OnPropertyChanged("StringControlVis");
+                }
+
             }
         }
         public bool IsSimple
@@ -198,7 +251,10 @@ namespace WPFUserInterface.ViewModels
             {
                 _passLength = value;
                 OnPropertyChanged("PasswordLength");
-                GeneratePassword();
+                if (IsDice)
+                    GenerateDiceware();
+                else
+                    GeneratePassword();
             }
         }
         #endregion

@@ -104,6 +104,7 @@
       <DependentUpon>VaultList.xaml</DependentUpon>
     </Compile>
     <Compile Include="Helpers\ChangePageEventArgs.cs" />
+    <Compile Include="Helpers\CryptoRandom.cs" />
     <Compile Include="Helpers\CryptUtils.cs" />
     <Compile Include="Helpers\MultiPassBoxConverter.cs" />
     <Compile Include="Helpers\PasswordUtils.cs" />
@@ -289,7 +290,9 @@
     <Resource Include="Images\right.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Assets\wordlist.txt" />
+    <Content Include="Assets\wordlist.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\font-awesome.css" />
