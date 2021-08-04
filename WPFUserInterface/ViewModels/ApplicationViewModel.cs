@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -35,6 +36,7 @@ namespace WPFUserInterface.ViewModels
                 PageCollection.LoginView = (mainNavWindow.Content as LoginPageView);
             }
             currentViewModel = typeof(LoginPageView);
+            AddItemPopupManager = new ObservableCollection<AddItemPrompt>();
 
             //Set the event handler "ChangePage" on the current ViewModel to trigger a navigation to another view via "PageChanged" method
             ((LoginViewModel)PageCollection.LoginView.DataContext).ChangePage += PageChanged;
@@ -143,6 +145,8 @@ namespace WPFUserInterface.ViewModels
                 this.mainNavWindow = value;
             }
         }
+
+        internal static ObservableCollection<AddItemPrompt> AddItemPopupManager { get; set; }
         #endregion
     }
 }

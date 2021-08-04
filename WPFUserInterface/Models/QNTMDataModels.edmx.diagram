@@ -6,6 +6,7 @@
     <edmx:Diagrams>
       <Diagram DiagramId="c1e7438891eb4d45908978da5a5a851e" Name="Diagram1">
         <EntityTypeShape EntityType="QNTMDBModel.User" Width="1.5" PointX="2.375" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QNTMDBModel.Entry" Width="1.5" PointX="0.75" PointY="3.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

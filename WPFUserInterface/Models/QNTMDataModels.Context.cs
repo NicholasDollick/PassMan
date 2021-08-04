@@ -26,5 +26,6 @@ namespace WPFUserInterface.Models
         }
     
         public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<Entry> Entries { get; set; }
     }
 }

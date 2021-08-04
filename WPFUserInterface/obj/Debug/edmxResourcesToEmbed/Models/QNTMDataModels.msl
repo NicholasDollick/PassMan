@@ -10,5 +10,18 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Entries">
+      <EntityTypeMapping TypeName="QNTMDBModel.Entry">
+        <MappingFragment StoreEntitySet="Entries">
+          <ScalarProperty Name="note" ColumnName="note" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="url" ColumnName="url" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>
