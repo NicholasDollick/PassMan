@@ -109,10 +109,24 @@
                             <!--<ScrollViewer Background="LightGray">
                                 
                             </ScrollViewer>-->
-                            <ListView Background="LightGray">
+                            <ListView Background="LightGray" 
+                                      ItemsSource="{Binding VaultItems, UpdateSourceTrigger=Default}"
+                                      Width="200"
+                                      >
                                 <ListView.ItemTemplate>
                                     <DataTemplate>
-                                        
+                                        <StackPanel Orientation="Vertical" Width="200">
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock Text="IMAGE" Margin="0 10 10 0"/>
+                                                <StackPanel Orientation="Vertical">
+                                                    <TextBlock Text="{Binding EntryName}" FontWeight="Bold"/>
+                                                    <TextBlock Text="{Binding Username}"/>
+                                                </StackPanel>
+                                            </StackPanel>
+                                            <Border Height="1" 
+                                                Background="{StaticResource WidgetColorE}"
+                                                Margin="0 3 0 0"/>
+                                        </StackPanel>
                                     </DataTemplate>
                                 </ListView.ItemTemplate>
                             </ListView>

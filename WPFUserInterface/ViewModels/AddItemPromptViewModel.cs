@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data.Entity.Validation;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -14,6 +10,12 @@ namespace WPFUserInterface.ViewModels
 {
     class AddItemPromptViewModel : BaseViewModel
     {
+        ICommand _cmd;
+        public AddItemPromptViewModel(ICommand cmd)
+        {
+            AddNewEntryCommand = new RelayCommand(AddNew, param => true);
+            _cmd = cmd;
+        }
         public AddItemPromptViewModel()
         {
             AddNewEntryCommand = new RelayCommand(AddNew, param => true);
@@ -31,7 +33,6 @@ namespace WPFUserInterface.ViewModels
                 {
                     Entry toAdd = new Entry()
                     {
-                        // this needs a userid
                         userId = SessionInfo.CurrentUserID,
                         name = Name,
                         url = Url,
@@ -42,6 +43,7 @@ namespace WPFUserInterface.ViewModels
 
                     db.Entries.Add(toAdd);
                     db.SaveChanges();
+                    _cmd.Execute(null);
                     ApplicationViewModel.AddItemPopupManager[0].Close();
                 }
             }
