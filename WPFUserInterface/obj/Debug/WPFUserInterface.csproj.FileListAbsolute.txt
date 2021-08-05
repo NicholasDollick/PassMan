@@ -86,3 +86,6 @@ F:\Personal\Secure Manager\QNTM\WPFUserInterface\obj\Debug\AddItemPrompt.baml
 F:\Personal\Secure Manager\QNTM\WPFUserInterface\bin\Debug\Assets\wordlist.txt
 F:\Personal\Secure Manager\QNTM\WPFUserInterface\obj\Debug\Custom Controls\test.g.cs
 F:\Personal\Secure Manager\QNTM\WPFUserInterface\obj\Debug\Custom Controls\test.baml
+F:\Personal\Secure Manager\QNTM\WPFUserInterface\bin\Debug\Microsoft.Xaml.Behaviors.dll
+F:\Personal\Secure Manager\QNTM\WPFUserInterface\bin\Debug\Microsoft.Xaml.Behaviors.pdb
+F:\Personal\Secure Manager\QNTM\WPFUserInterface\bin\Debug\Microsoft.Xaml.Behaviors.xml

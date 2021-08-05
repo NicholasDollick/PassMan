@@ -5,6 +5,7 @@ using System.Collections.Specialized;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using System.Windows.Input;
 using WPFUserInterface.Helpers;
 using WPFUserInterface.Models;
@@ -15,12 +16,23 @@ namespace WPFUserInterface.ViewModels
     class VaultPageViewModel : BaseViewModel
     {
         private ObservableCollection<VaultItem> items;
+        private ICommand selectedEntryChanged;
+        private object _selectedItem;
 
         public VaultPageViewModel() : base()
         {
             GoToGeneratorCommand = new RelayCommand(ChangePageToGenerator, param => true);
             AddNewEntryCommand = new RelayCommand(AddNewEntry, param => true);
             RefreshItems = new RelayCommand(test, param => true);
+            SelectedEntryChanged = new RelayCommand(OnSelectedEntryChanged, param => true);
+        }
+
+        private void OnSelectedEntryChanged(object obj)
+        {
+            if (SelectedItem == null)
+                return;
+
+            RefreshList(SelectedItem as VaultItem);
         }
 
         private void test(object obj)
@@ -35,9 +47,45 @@ namespace WPFUserInterface.ViewModels
                         new VaultItem()
                         {
                             Username = item.username,
-                            EntryName = item.name
+                            EntryName = item.name,
+                            EntryVisibility = "Collapsed"
                         }
                         );
+                }
+            }
+        }
+
+        private void RefreshList(VaultItem toChange)
+        {
+            VaultItems = new ObservableCollection<VaultItem>();
+            using (QNTMDBEntities db = new QNTMDBEntities())
+            {
+                var entries = (from e in db.Entries select e).Where(u => u.userId == SessionInfo.CurrentUserID);
+                foreach (var item in entries)
+                {
+                    if (item.name.Equals(toChange.EntryName) && item.username.Equals(toChange.Username))
+                    {
+                        VaultItems.Add(
+                            new VaultItem()
+                            {
+                                Username = item.username,
+                                EntryName = item.name,
+                                EntryVisibility = "Visible"
+                            }
+                            );
+                    }
+                    else
+                    {
+                        VaultItems.Add(
+                            new VaultItem()
+                            {
+                                Username = item.username,
+                                EntryName = item.name,
+                                EntryVisibility = "Collapsed"
+                            }
+                            );
+                    }
+
                 }
             }
         }
@@ -54,7 +102,8 @@ namespace WPFUserInterface.ViewModels
                         new VaultItem()
                         {
                             Username = item.username,
-                            EntryName = item.name
+                            EntryName = item.name,
+                            EntryVisibility = "Collapsed"
                         }
                         );
                 }
@@ -97,6 +146,33 @@ namespace WPFUserInterface.ViewModels
                 });
             }
         }
+        public ICommand SelectedEntryChanged
+        {
+            get
+            {
+                return this.selectedEntryChanged;
+            }
+            set
+            {
+                this.selectedEntryChanged = value;
+            }
+        }
+
+        public object SelectedItem
+        {
+            get
+            {
+                return this._selectedItem;
+            }
+            set
+            {
+                //value.EntryVisibility = "Visible";
+                //var x = VaultItems.Where(i => i == value).FirstOrDefault();
+                //x.EntryVisibility = "Visible";
+                SetField(ref this._selectedItem, value, "SelectedItem");
+            }
+        }
+
         #endregion
 
     }

@@ -7,6 +7,7 @@ namespace WPFUserInterface.Models
     class VaultItem
     {
         public bool IsEntrySelected { get; set; }
+        public string EntryVisibility { get; set; }
 
         //public string ContactProfilePic { get; set; }
 
