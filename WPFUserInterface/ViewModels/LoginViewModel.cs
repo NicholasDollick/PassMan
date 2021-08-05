@@ -41,6 +41,8 @@ namespace WPFUserInterface.ViewModels
             {
                 if (AuthenticateCredentials(this.Username, passwordBox.Password))
                 {
+                    // this isnt the best way of doing this, should be a random seed later
+                    SessionInfo.CurrentUserID = this.Username;
                     ChangePageToVaultView(null);
                 }
                 else

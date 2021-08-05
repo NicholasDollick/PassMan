@@ -132,6 +132,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QNTMDataModels.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\SessionInfo.cs" />
     <Compile Include="Models\User.cs">
       <DependentUpon>QNTMDataModels.tt</DependentUpon>
     </Compile>

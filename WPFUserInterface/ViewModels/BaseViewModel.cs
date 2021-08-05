@@ -77,6 +77,6 @@ namespace WPFUserInterface.ViewModels
         #endregion
 
         public ICommand Test { get; set; }
-
+        
     }
 }

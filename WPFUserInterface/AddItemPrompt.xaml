@@ -83,7 +83,7 @@
                                 <TextBlock Text="Name" Foreground="{StaticResource OnBackgroundColor}"/>
                                 <TextBox Foreground="{StaticResource OnBackgroundColor}"
                                          Background="{StaticResource WidgetColorB}"
-                                         Text="Gmail"
+                                         Text="{Binding Name}"
                                           BorderThickness="0" >
 
                                 </TextBox>
@@ -96,7 +96,7 @@
                                 <StackPanel Orientation="Horizontal">
                                     <TextBox Foreground="{StaticResource OnBackgroundColor}"
                                          Background="{StaticResource WidgetColorB}"
-                                         Text="accounts.gmail.com"
+                                         Text="{Binding Url}"
                                          BorderThickness="0"
                                          Width="200">
                                     </TextBox>
@@ -136,7 +136,7 @@
                                 <StackPanel Orientation="Horizontal">
                                     <TextBox Foreground="{StaticResource OnBackgroundColor}"
                                          Background="{StaticResource WidgetColorB}"
-                                         Text="chungus123"
+                                         Text="{Binding Username}"
                                           BorderThickness="0" 
                                              Width="200">
 
@@ -166,6 +166,7 @@
                                          Background="{StaticResource WidgetColorB}"
                                          Password="asdfasdfasdf"
                                           BorderThickness="0" 
+                                                 x:Name="passBox"
                                                  Width="200"
                                                  >
 
@@ -190,7 +191,9 @@
                                             BorderThickness="0"
                                             FontSize="18"
                                              HorizontalAlignment="Right"
-                                            Margin="20 0 0 0">
+                                            Margin="20 0 0 0"
+                                            
+                                            >
 
                                     </Button>
                                 </StackPanel>
@@ -216,7 +219,7 @@
                                 <!--<TextBlock Text="Name" Foreground="{StaticResource OnBackgroundColor}"/>-->
                                 <TextBox Margin="0 0 0 10" Foreground="{StaticResource OnBackgroundColor}"
                                          Background="{StaticResource WidgetColorB}"
-                                         Text="tied to netflix and spotify"
+                                         Text="{Binding Notes}"
                                           BorderThickness="0" FontWeight="Bold"
                                          >
 
@@ -233,12 +236,13 @@
                             VerticalAlignment="Center"
                             Content="&#xf14b;   Add to vault"
                                             FontFamily="{StaticResource FontAwesome}"
-                                            Command="{Binding CopyPasswordCommand}"
+                                            Command="{Binding  AddNewEntryCommand}"
                                             Foreground="{StaticResource SecondaryColor}"
                                             Background="{StaticResource WidgetColorA}"
                                             BorderThickness="1"
                                             FontSize="18"
                                              HorizontalAlignment="Center"
+                            CommandParameter="{Binding ElementName=passBox}"
                             Height="30"
                             >
 

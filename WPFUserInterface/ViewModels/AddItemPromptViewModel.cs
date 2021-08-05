@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
 using WPFUserInterface.Helpers;
 using WPFUserInterface.Models;
@@ -20,8 +21,8 @@ namespace WPFUserInterface.ViewModels
 
         private void AddNew(object param)
         {
-            var passwords = (object[])param;
-            if (string.IsNullOrEmpty(Username))
+            var password = (param as PasswordBox).Password;
+            if (string.IsNullOrEmpty(Username) || string.IsNullOrEmpty(password))
                 return;
             try
             {
@@ -30,33 +31,19 @@ namespace WPFUserInterface.ViewModels
                 {
                     Entry toAdd = new Entry()
                     {
+                        // this needs a userid
+                        userId = SessionInfo.CurrentUserID,
                         name = Name,
                         url = Url,
                         note = Notes,
                         username = Username,
-                        //password = CryptUtils.CreatePBKDF2Hash((passwords[0] as PasswordBox).Password)
+                        password = CryptUtils.EncryptWithWindowsAcc(password)
                     };
 
                     db.Entries.Add(toAdd);
                     db.SaveChanges();
+                    ApplicationViewModel.AddItemPopupManager[0].Close();
                 }
-                //if ((passwords[0] as PasswordBox).Password.Equals((passwords[1] as PasswordBox).Password))
-                //{
-                //    // do the register thing
-
-
-                //    //MessageBox.Show("User Added! :D");
-                //    // redirect to smething here
-                //    //ChangePageToLogin(null);
-                //}
-                //else
-                //{
-                //    //Username = "";
-                //    //(passwords[0] as PasswordBox).Password = "";
-                //    //(passwords[1] as PasswordBox).Password = "";
-                //    //MessageBox.Show("These dont match yo");
-                //}
-
             }
             catch (DbEntityValidationException x)
             {
