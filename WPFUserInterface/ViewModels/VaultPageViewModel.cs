@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Controls;
 using System.Windows.Input;
 using WPFUserInterface.Helpers;
 using WPFUserInterface.Models;
@@ -25,14 +20,25 @@ namespace WPFUserInterface.ViewModels
             AddNewEntryCommand = new RelayCommand(AddNewEntry, param => true);
             RefreshItems = new RelayCommand(test, param => true);
             SelectedEntryChanged = new RelayCommand(OnSelectedEntryChanged, param => true);
+            DetailsInfoVis = "Hidden";
         }
 
         private void OnSelectedEntryChanged(object obj)
         {
             if (SelectedItem == null)
                 return;
-
-            RefreshList(SelectedItem as VaultItem);
+            var item = SelectedItem as VaultItem;
+            RefreshList(item);
+            DetailsInfoVis = "Visible";
+            OnPropertyChanged("DetailsInfoVis");
+            EntryName = item.EntryName;
+            EntryUrl = "";
+            EntryNotes = "this needs to be fixed";
+            EntryUsername = item.Username;
+            OnPropertyChanged("EntryName");
+            OnPropertyChanged("EntryUrl");
+            OnPropertyChanged("EntryNotes");
+            OnPropertyChanged("EntryUsername");
         }
 
         private void test(object obj)
@@ -130,6 +136,12 @@ namespace WPFUserInterface.ViewModels
         public ICommand GoToGeneratorCommand { get; set; }
         public ICommand AddNewEntryCommand { get; set; }
         public ICommand RefreshItems { get; set; }
+        public string DetailsInfoVis { get; set; }
+        public string EntryName { get; set; }
+        public string EntryUrl { get; set; }
+        public string EntryUsername { get; set; }
+        public string EntryPassword { get; set; }
+        public string EntryNotes { get; set; }
         public ObservableCollection<VaultItem> VaultItems
         {
             get => this.items;
@@ -166,9 +178,6 @@ namespace WPFUserInterface.ViewModels
             }
             set
             {
-                //value.EntryVisibility = "Visible";
-                //var x = VaultItems.Where(i => i == value).FirstOrDefault();
-                //x.EntryVisibility = "Visible";
                 SetField(ref this._selectedItem, value, "SelectedItem");
             }
         }

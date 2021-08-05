@@ -168,7 +168,7 @@
 
         <!-- control side -->
         <Grid Grid.Column="1" Grid.Row="1">
-            <Grid>
+            <Grid Visibility="{Binding DetailsInfoVis}">
                 <Grid.RowDefinitions>
                     <RowDefinition/>
                     <RowDefinition Height="40"/>
@@ -194,7 +194,7 @@
                                 <TextBlock Text="Name" Foreground="{StaticResource OnBackgroundColor}"/>
                                 <TextBox Foreground="{StaticResource OnBackgroundColor}"
                                          Background="{StaticResource WidgetColorB}"
-                                         Text="Gmail"
+                                         Text="{Binding EntryName}"
                                           BorderThickness="0" >
 
                                 </TextBox>
@@ -207,7 +207,7 @@
                                 <StackPanel Orientation="Horizontal">
                                     <TextBox Foreground="{StaticResource OnBackgroundColor}"
                                          Background="{StaticResource WidgetColorB}"
-                                         Text="accounts.gmail.com"
+                                         Text="{Binding EntryUrl}"
                                          BorderThickness="0"
                                          Width="200">
                                     </TextBox>
@@ -247,7 +247,7 @@
                                 <StackPanel Orientation="Horizontal">
                                     <TextBox Foreground="{StaticResource OnBackgroundColor}"
                                          Background="{StaticResource WidgetColorB}"
-                                         Text="chungus123"
+                                         Text="{Binding EntryUsername}"
                                           BorderThickness="0" 
                                              Width="200">
 
@@ -327,10 +327,9 @@
                                 <!--<TextBlock Text="Name" Foreground="{StaticResource OnBackgroundColor}"/>-->
                                 <TextBox Margin="0 0 0 10" Foreground="{StaticResource OnBackgroundColor}"
                                          Background="{StaticResource WidgetColorB}"
-                                         Text="tied to netflix and spotify"
+                                         Text="{Binding EntryNotes}"
                                           BorderThickness="0" FontWeight="Bold"
                                          >
-
                                 </TextBox>
                             </StackPanel>
                            
