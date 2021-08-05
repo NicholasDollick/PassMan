@@ -5,7 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFUserInterface"
         mc:Ignorable="d"
+        xmlns:vm="clr-namespace:WPFUserInterface.ViewModels"
         Title="Add Entry" Height="400" Width="800">
+    <Window.DataContext>
+        <vm:AddItemPromptViewModel/>
+    </Window.DataContext>
+    
     <Grid Background="{StaticResource ResourceKey=BackgroundColor}">
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
