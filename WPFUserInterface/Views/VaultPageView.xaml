@@ -275,10 +275,17 @@
                             <StackPanel Grid.Row="3" Margin="10 5 0 10">
                                 <TextBlock Text="Password" Foreground="{StaticResource OnBackgroundColor}"/>
                                 <StackPanel Orientation="Horizontal">
+                                    <TextBox Text="{Binding Password}"
+                                            Visibility="{Binding PasswordVisibility}"
+                                            Foreground="{StaticResource OnBackgroundColor}"
+                                            Background="{StaticResource WidgetColorB}"
+                                            BorderThickness="0" 
+                                            Width="200"/>
                                     <PasswordBox Foreground="{StaticResource OnBackgroundColor}"
-                                         Background="{StaticResource WidgetColorB}"
-                                         Password="asdfasdfasdf"
-                                          BorderThickness="0" 
+                                                Background="{StaticResource WidgetColorB}"
+                                                Visibility="{Binding PasswordBoxVisibility}"
+                                                Password="asdfasdfasdf"
+                                                BorderThickness="0" 
                                                  x:Name="passBox"
                                                  Width="200"
                                                  >

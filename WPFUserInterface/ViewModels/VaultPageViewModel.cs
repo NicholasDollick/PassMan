@@ -28,9 +28,10 @@ namespace WPFUserInterface.ViewModels
             CopyUsernameCommand = new RelayCommand(CopyUsername, param => true);
             CopyPasswordCommand = new RelayCommand(CopyPassword, param => true);
             RevealPasswordCommand = new RelayCommand(ShowPassword, param => true);
-            //DetailsInfoVis = "Hidden";
-            PasswordVisibility = "Hidden";
-            DetailsInfoVis = "Visible";
+            DetailsInfoVis = "Hidden";
+            PasswordVisibility = "Collapsed";
+            PasswordBoxVisibility = "Visible";
+            Password = "";
         }
 
         public override void LoadViewModel(ChangePageEventArgs args)
@@ -144,7 +145,24 @@ namespace WPFUserInterface.ViewModels
 
         private void ShowPassword(object obj)
         {
-            throw new NotImplementedException();
+            if(PasswordVisibility.Equals("Visible"))
+            {
+                Password = "";
+                PasswordBoxVisibility = "Visible";
+                PasswordVisibility = "Collapsed";
+                OnPropertyChanged("PasswordBoxVisibility");
+                OnPropertyChanged("PasswordVisibility");
+                OnPropertyChanged("Password");
+            }
+            else
+            {
+                Password = (obj as PasswordBox).Password;
+                PasswordBoxVisibility = "Collapsed";
+                PasswordVisibility = "Visible";
+                OnPropertyChanged("PasswordBoxVisibility");
+                OnPropertyChanged("PasswordVisibility");
+                OnPropertyChanged("Password");
+            }
         }
 
         private void CopyPassword(object obj)
@@ -224,6 +242,7 @@ namespace WPFUserInterface.ViewModels
         public string EntryNotes { get; set; }
         public string Password { get; set; }
         public string PasswordVisibility { get; set; }
+        public string PasswordBoxVisibility { get; set; }
         public ObservableCollection<VaultItem> VaultItems
         {
             get => this.items;
