@@ -73,8 +73,36 @@
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-
-
+                <!-- controls -->
+                <Grid Grid.Column="0" Grid.Row="1"
+                      Background="LightGray">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Orientation="Horizontal" 
+                                Grid.Row="0"
+                                Background="Gray">
+                        <TextBlock Text="&#xf0ae;"
+                                   FontFamily="{StaticResource FontAwesome}" 
+                                   VerticalAlignment="Center"
+                                   Margin="20 0 5 0"
+                                   />
+                        <TextBlock Text="All Items" FontWeight="Medium"
+                                   VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Grid>
+                <!-- list -->
                 <Grid Grid.Column="1" Grid.Row="1">
                     <Grid>
                         <Grid.RowDefinitions>
