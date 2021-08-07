@@ -124,7 +124,7 @@
                                 </i:Interaction.Triggers>
                                 <ListView.ItemTemplate>
                                     <DataTemplate>
-                                        <StackPanel Orientation="Vertical" Width="200">
+                                        <StackPanel Orientation="Vertical" Width="249">
                                             <StackPanel Orientation="Horizontal">
                                                 <Border Width="4" 
                                                     Background="{StaticResource AccentColor}"

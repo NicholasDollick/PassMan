@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
+using System.Data.Entity;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
@@ -106,22 +107,22 @@ namespace WPFUserInterface.ViewModels
 
         private void RefreshList(VaultItem toChange)
         {
-            VaultItems = new ObservableCollection<VaultItem>();
-            using (QNTMDBEntities db = new QNTMDBEntities())
+            if(!string.IsNullOrWhiteSpace(SearchTerm))
             {
-                var entries = (from e in db.Entries select e).Where(u => u.userId == SessionInfo.CurrentUserID);
-                foreach (var item in entries)
+                var temp = VaultItems;
+                VaultItems = new ObservableCollection<VaultItem>();
+                foreach (var item in temp)
                 {
-                    if (item.name.Equals(toChange.EntryName) && item.username.Equals(toChange.Username))
+                    if (item.EntryName.Equals(toChange.EntryName) && item.Username.Equals(toChange.Username))
                     {
                         VaultItems.Add(
                             new VaultItem()
                             {
-                                Username = item.username,
-                                EntryName = item.name,
-                                Password = item.password,
-                                URL = item.url,
-                                Note = item.note,
+                                Username = item.Username,
+                                EntryName = item.EntryName,
+                                Password = item.Password,
+                                URL = item.URL,
+                                Note = item.Note,
                                 EntryVisibility = "Visible"
                             }
                             );
@@ -131,16 +132,54 @@ namespace WPFUserInterface.ViewModels
                         VaultItems.Add(
                             new VaultItem()
                             {
-                                Username = item.username,
-                                EntryName = item.name,
-                                Password = item.password,
-                                URL = item.url,
-                                Note = item.note,
+                                Username = item.Username,
+                                EntryName = item.EntryName,
+                                Password = item.Password,
+                                URL = item.URL,
+                                Note = item.Note,
                                 EntryVisibility = "Collapsed"
                             }
                             );
                     }
-
+                }
+            }
+            else
+            {
+                VaultItems = new ObservableCollection<VaultItem>();
+                using (QNTMDBEntities db = new QNTMDBEntities())
+                {
+                    var entries = (from e in db.Entries select e).Where(u => u.userId == SessionInfo.CurrentUserID);
+                    foreach (var item in entries)
+                    {
+                        if (item.name.Equals(toChange.EntryName) && item.username.Equals(toChange.Username))
+                        {
+                            VaultItems.Add(
+                                new VaultItem()
+                                {
+                                    Username = item.username,
+                                    EntryName = item.name,
+                                    Password = item.password,
+                                    URL = item.url,
+                                    Note = item.note,
+                                    EntryVisibility = "Visible"
+                                }
+                                );
+                        }
+                        else
+                        {
+                            VaultItems.Add(
+                                new VaultItem()
+                                {
+                                    Username = item.username,
+                                    EntryName = item.name,
+                                    Password = item.password,
+                                    URL = item.url,
+                                    Note = item.note,
+                                    EntryVisibility = "Collapsed"
+                                }
+                                );
+                        }
+                    }
                 }
             }
         }
@@ -295,13 +334,37 @@ namespace WPFUserInterface.ViewModels
             {
                 if(_searchTerm != value)
                 {
-                    if (string.IsNullOrEmpty(value))
+                    if (string.IsNullOrWhiteSpace(value))
                     {
+                        _searchTerm = value;
+                        OnPropertyChanged("SearchTerm");
                         RefreshList(new VaultItem { EntryName = "", URL = "", Username = ""});
                     }
                     else
                     {
                         // apply the search filter here
+                        VaultItems = new ObservableCollection<VaultItem>();
+                        using (QNTMDBEntities db = new QNTMDBEntities())
+                        {
+                            var entries = (from e in db.Entries select e)
+                                .Where(u => u.userId == SessionInfo.CurrentUserID)
+                                .Where(obj => DbFunctions.Like(obj.name, "%"+value+"%") || DbFunctions.Like(obj.url, "%" + value + "%") 
+                                        || DbFunctions.Like(obj.username, "%" + value + "%") || DbFunctions.Like(obj.note, "%" + value + "%"));
+                            foreach (var item in entries)
+                            {
+                                VaultItems.Add(
+                                    new VaultItem()
+                                    {
+                                        Username = item.username,
+                                        EntryName = item.name,
+                                        Password = item.password,
+                                        URL = item.url,
+                                        Note = item.note,
+                                        EntryVisibility = "Collapsed"
+                                    }
+                                    );
+                            }
+                        }
                     }
                 }
                 _searchTerm = value;
