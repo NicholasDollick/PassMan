@@ -1,6 +1,9 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.Linq;
+using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
 using WPFUserInterface.Helpers;
 using WPFUserInterface.Models;
@@ -20,27 +23,61 @@ namespace WPFUserInterface.ViewModels
             AddNewEntryCommand = new RelayCommand(AddNewEntry, param => true);
             RefreshItems = new RelayCommand(test, param => true);
             SelectedEntryChanged = new RelayCommand(OnSelectedEntryChanged, param => true);
-            DetailsInfoVis = "Hidden";
+            OpenURLCommand = new RelayCommand(OpenURL, param => true);
+            CopyURLCommand = new RelayCommand(CopyURL, param => true);
+            CopyUsernameCommand = new RelayCommand(CopyUsername, param => true);
+            CopyPasswordCommand = new RelayCommand(CopyPassword, param => true);
+            RevealPasswordCommand = new RelayCommand(ShowPassword, param => true);
+            //DetailsInfoVis = "Hidden";
+            PasswordVisibility = "Hidden";
+            DetailsInfoVis = "Visible";
+        }
+
+        public override void LoadViewModel(ChangePageEventArgs args)
+        {
+            VaultItems = new ObservableCollection<VaultItem>();
+            using (QNTMDBEntities db = new QNTMDBEntities())
+            {
+                var entries = (from e in db.Entries select e).Where(u => u.userId == SessionInfo.CurrentUserID);
+                foreach (var item in entries)
+                {
+                    VaultItems.Add(
+                        new VaultItem()
+                        {
+                            Username = item.username,
+                            EntryName = item.name,
+                            Password = item.password,
+                            URL = item.url,
+                            Note = item.note,
+                            EntryVisibility = "Collapsed"
+                        }
+                        );
+                }
+            }
         }
 
         private void OnSelectedEntryChanged(object obj)
         {
             if (SelectedItem == null)
                 return;
+
             var item = SelectedItem as VaultItem;
+            var passBox = obj as PasswordBox;
             RefreshList(item);
             DetailsInfoVis = "Visible";
             OnPropertyChanged("DetailsInfoVis");
             EntryName = item.EntryName;
-            EntryUrl = "";
-            EntryNotes = "this needs to be fixed";
+            EntryUrl = item.URL;
+            EntryNotes = item.Note;
             EntryUsername = item.Username;
+            passBox.Password = CryptUtils.DecryptWithWindowsAcc(item.Password);
             OnPropertyChanged("EntryName");
             OnPropertyChanged("EntryUrl");
             OnPropertyChanged("EntryNotes");
             OnPropertyChanged("EntryUsername");
         }
 
+        // TODO: rename this lol
         private void test(object obj)
         {
             VaultItems = new ObservableCollection<VaultItem>();
@@ -54,6 +91,9 @@ namespace WPFUserInterface.ViewModels
                         {
                             Username = item.username,
                             EntryName = item.name,
+                            Password = item.password,
+                            URL = item.url,
+                            Note = item.note,
                             EntryVisibility = "Collapsed"
                         }
                         );
@@ -76,6 +116,9 @@ namespace WPFUserInterface.ViewModels
                             {
                                 Username = item.username,
                                 EntryName = item.name,
+                                Password = item.password,
+                                URL = item.url,
+                                Note = item.note,
                                 EntryVisibility = "Visible"
                             }
                             );
@@ -87,6 +130,9 @@ namespace WPFUserInterface.ViewModels
                             {
                                 Username = item.username,
                                 EntryName = item.name,
+                                Password = item.password,
+                                URL = item.url,
+                                Note = item.note,
                                 EntryVisibility = "Collapsed"
                             }
                             );
@@ -96,23 +142,52 @@ namespace WPFUserInterface.ViewModels
             }
         }
 
-        public override void LoadViewModel(ChangePageEventArgs args)
+        private void ShowPassword(object obj)
         {
-            VaultItems = new ObservableCollection<VaultItem>();
-            using (QNTMDBEntities db = new QNTMDBEntities())
+            throw new NotImplementedException();
+        }
+
+        private void CopyPassword(object obj)
+        {
+            try
             {
-                var entries = (from e in db.Entries select e).Where(u => u.userId == SessionInfo.CurrentUserID);
-                foreach(var item in entries)
+                Clipboard.SetText((obj as PasswordBox).Password);
+            }
+            catch { }
+        }
+
+        private void CopyUsername(object obj)
+        {
+            try
+            {
+                Clipboard.SetText(EntryUsername);
+            }
+            catch { }
+        }
+
+        private void CopyURL(object obj)
+        {
+            try
+            {
+                Clipboard.SetText(EntryUrl);
+            }
+            catch { }
+        }
+
+        private void OpenURL(object obj)
+        {
+            try
+            {
+                var urlToOpen = "http://" + EntryUrl;
+                var sInfo = new System.Diagnostics.ProcessStartInfo(urlToOpen)
                 {
-                    VaultItems.Add(
-                        new VaultItem()
-                        {
-                            Username = item.username,
-                            EntryName = item.name,
-                            EntryVisibility = "Collapsed"
-                        }
-                        );
-                }
+                    UseShellExecute = true,
+                };
+                System.Diagnostics.Process.Start(sInfo);
+            }
+            catch(Exception ex) 
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -136,12 +211,19 @@ namespace WPFUserInterface.ViewModels
         public ICommand GoToGeneratorCommand { get; set; }
         public ICommand AddNewEntryCommand { get; set; }
         public ICommand RefreshItems { get; set; }
+        public ICommand OpenURLCommand { get; set; }
+        public ICommand CopyURLCommand { get; set; }
+        public ICommand CopyUsernameCommand { get; set; }
+        public ICommand CopyPasswordCommand { get; set; }
+        public ICommand RevealPasswordCommand { get; set; }
         public string DetailsInfoVis { get; set; }
         public string EntryName { get; set; }
         public string EntryUrl { get; set; }
         public string EntryUsername { get; set; }
         public string EntryPassword { get; set; }
         public string EntryNotes { get; set; }
+        public string Password { get; set; }
+        public string PasswordVisibility { get; set; }
         public ObservableCollection<VaultItem> VaultItems
         {
             get => this.items;

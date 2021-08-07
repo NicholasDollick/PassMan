@@ -117,7 +117,9 @@
                                       >
                                 <i:Interaction.Triggers>
                                     <i:EventTrigger EventName="SelectionChanged">
-                                        <i:InvokeCommandAction Command="{Binding SelectedEntryChanged}"/>
+                                        <i:InvokeCommandAction Command="{Binding SelectedEntryChanged}"
+                                                               CommandParameter="{Binding ElementName=passBox}"
+                                                               />
                                     </i:EventTrigger>
                                 </i:Interaction.Triggers>
                                 <ListView.ItemTemplate>
@@ -214,7 +216,7 @@
                                     <!--these are gonna be a problem w/spacing-->
                                     <Button Content="&#xf2d2;"
                                             FontFamily="{StaticResource FontAwesome}"
-                                            Command="{Binding CopyPasswordCommand}"
+                                            Command="{Binding OpenURLCommand}"
                                             Foreground="{StaticResource SecondaryColor}"
                                             Background="{StaticResource WidgetColorA}"
                                             BorderThickness="0"
@@ -225,7 +227,7 @@
                                     </Button>
                                     <Button Content="&#xf0c5;"
                                             FontFamily="{StaticResource FontAwesome}"
-                                            Command="{Binding CopyPasswordCommand}"
+                                            Command="{Binding CopyURLCommand}"
                                             Foreground="{StaticResource SecondaryColor}"
                                             Background="{StaticResource WidgetColorA}"
                                             BorderThickness="0"
@@ -255,7 +257,7 @@
                                     <!--these are gonna be a problem w/spacing-->
                                     <Button Content="&#xf0c5;"
                                             FontFamily="{StaticResource FontAwesome}"
-                                            Command="{Binding CopyPasswordCommand}"
+                                            Command="{Binding CopyUsernameCommand}"
                                             Foreground="{StaticResource SecondaryColor}"
                                             Background="{StaticResource WidgetColorA}"
                                             BorderThickness="0"
@@ -277,6 +279,7 @@
                                          Background="{StaticResource WidgetColorB}"
                                          Password="asdfasdfasdf"
                                           BorderThickness="0" 
+                                                 x:Name="passBox"
                                                  Width="200"
                                                  >
 
@@ -284,7 +287,8 @@
                                     <!--these are gonna be a problem w/spacing-->
                                     <Button Content="&#xf06e;"
                                             FontFamily="{StaticResource FontAwesome}"
-                                            Command="{Binding CopyPasswordCommand}"
+                                            Command="{Binding RevealPasswordCommand}"
+                                            CommandParameter="{Binding ElementName=passBox}"
                                             Foreground="{StaticResource SecondaryColor}"
                                             Background="{StaticResource WidgetColorA}"
                                             BorderThickness="0"
@@ -296,6 +300,7 @@
                                     <Button Content="&#xf0c5;"
                                             FontFamily="{StaticResource FontAwesome}"
                                             Command="{Binding CopyPasswordCommand}"
+                                            CommandParameter="{Binding ElementName=passBox}"
                                             Foreground="{StaticResource SecondaryColor}"
                                             Background="{StaticResource WidgetColorA}"
                                             BorderThickness="0"

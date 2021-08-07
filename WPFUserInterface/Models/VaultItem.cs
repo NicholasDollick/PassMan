@@ -17,5 +17,8 @@ namespace WPFUserInterface.Models
         public string DisplayLetters { get; set; }
 
         public string Username { get; set; }
+        public string Password { get; set; }
+        public string URL { get; set; }
+        public string Note { get; set; }
     }
 }
