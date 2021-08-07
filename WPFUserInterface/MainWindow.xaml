@@ -12,6 +12,7 @@
         mc:Ignorable="d"
         Title="QNTM" Height="600" Width="1000" 
         ShowsNavigationUI="False"
+                  ResizeMode="NoResize"
 >
    
 

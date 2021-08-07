@@ -16,6 +16,7 @@ namespace WPFUserInterface.ViewModels
         private ObservableCollection<VaultItem> items;
         private ICommand selectedEntryChanged;
         private object _selectedItem;
+        private string _searchTerm;
 
         public VaultPageViewModel() : base()
         {
@@ -32,6 +33,7 @@ namespace WPFUserInterface.ViewModels
             PasswordVisibility = "Collapsed";
             PasswordBoxVisibility = "Visible";
             Password = "";
+            //SearchTerm = "";
         }
 
         public override void LoadViewModel(ChangePageEventArgs args)
@@ -280,6 +282,30 @@ namespace WPFUserInterface.ViewModels
             set
             {
                 SetField(ref this._selectedItem, value, "SelectedItem");
+            }
+        }
+
+        public string SearchTerm
+        {
+            get
+            {
+                return this._searchTerm;
+            }
+            set
+            {
+                if(_searchTerm != value)
+                {
+                    if (string.IsNullOrEmpty(value))
+                    {
+                        RefreshList(new VaultItem { EntryName = "", URL = "", Username = ""});
+                    }
+                    else
+                    {
+                        // apply the search filter here
+                    }
+                }
+                _searchTerm = value;
+                OnPropertyChanged("SearchTerm");
             }
         }
 
