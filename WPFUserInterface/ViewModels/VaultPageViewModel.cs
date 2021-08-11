@@ -30,6 +30,7 @@ namespace WPFUserInterface.ViewModels
             CopyUsernameCommand = new RelayCommand(CopyUsername, param => true);
             CopyPasswordCommand = new RelayCommand(CopyPassword, param => true);
             RevealPasswordCommand = new RelayCommand(ShowPassword, param => true);
+            UpdateInfoCommand = new RelayCommand(UpdateInfo, param => true);
             DetailsInfoVis = "Hidden";
             PasswordVisibility = "Collapsed";
             PasswordBoxVisibility = "Visible";
@@ -79,6 +80,7 @@ namespace WPFUserInterface.ViewModels
             OnPropertyChanged("EntryUrl");
             OnPropertyChanged("EntryNotes");
             OnPropertyChanged("EntryUsername");
+            OnPropertyChanged("SelectedItem");
         }
 
         // TODO: rename this lol
@@ -250,6 +252,14 @@ namespace WPFUserInterface.ViewModels
             }
         }
 
+        private void UpdateInfo(object obj)
+        {
+            if (!DetailsInfoVis.Equals("Visible"))
+                return;
+
+            // update whatever info is being displayed at the moment of pressing the button
+        }
+
         private void AddNewEntry(object obj)
         {
             if(ApplicationViewModel.AddItemPopupManager != null || ApplicationViewModel.AddItemPopupManager.Count < 1)
@@ -275,6 +285,7 @@ namespace WPFUserInterface.ViewModels
         public ICommand CopyUsernameCommand { get; set; }
         public ICommand CopyPasswordCommand { get; set; }
         public ICommand RevealPasswordCommand { get; set; }
+        public ICommand UpdateInfoCommand { get; set; }
         public string DetailsInfoVis { get; set; }
         public string EntryName { get; set; }
         public string EntryUrl { get; set; }

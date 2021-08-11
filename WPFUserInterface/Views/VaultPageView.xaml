@@ -382,7 +382,7 @@
                             VerticalAlignment="Center"
                             Content="&#xf14b;"
                                             FontFamily="{StaticResource FontAwesome}"
-                                            Command="{Binding CopyPasswordCommand}"
+                                            Command="{Binding UpdateInfoCommand}"
                                             Foreground="{StaticResource SecondaryColor}"
                                             Background="{StaticResource WidgetColorA}"
                                             BorderThickness="1"

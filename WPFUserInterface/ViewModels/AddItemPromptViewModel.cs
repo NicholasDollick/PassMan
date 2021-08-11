@@ -14,7 +14,13 @@ namespace WPFUserInterface.ViewModels
         public AddItemPromptViewModel(ICommand cmd)
         {
             AddNewEntryCommand = new RelayCommand(AddNew, param => true);
+            CopyUsernameCommand = new RelayCommand(CopyUsername, param => true);
+            CopyPasswordCommand = new RelayCommand(CopyPassword, param => true);
+            RevealPasswordCommand = new RelayCommand(ShowPassword, param => true);
             _cmd = cmd;
+            PasswordVisibility = "Collapsed";
+            PasswordBoxVisibility = "Visible";
+            Password = "";
         }
         public AddItemPromptViewModel()
         {
@@ -64,15 +70,59 @@ namespace WPFUserInterface.ViewModels
                 return;
             }
         }
+        private void ShowPassword(object obj)
+        {
+            if (PasswordVisibility.Equals("Visible"))
+            {
+                Password = "";
+                PasswordBoxVisibility = "Visible";
+                PasswordVisibility = "Collapsed";
+                OnPropertyChanged("PasswordBoxVisibility");
+                OnPropertyChanged("PasswordVisibility");
+                OnPropertyChanged("Password");
+            }
+            else
+            {
+                Password = (obj as PasswordBox).Password;
+                PasswordBoxVisibility = "Collapsed";
+                PasswordVisibility = "Visible";
+                OnPropertyChanged("PasswordBoxVisibility");
+                OnPropertyChanged("PasswordVisibility");
+                OnPropertyChanged("Password");
+            }
+        }
+
+        private void CopyPassword(object obj)
+        {
+            try
+            {
+                Clipboard.SetText((obj as PasswordBox).Password);
+            }
+            catch { }
+        }
+
+        private void CopyUsername(object obj)
+        {
+            try
+            {
+                Clipboard.SetText(Username);
+            }
+            catch { }
+        }
 
 
-    #region Props
-    public ICommand AddNewEntryCommand { get; set; }
+        #region Props
+        public ICommand AddNewEntryCommand { get; set; }
+        public ICommand RevealPasswordCommand { get; set; }
+        public ICommand CopyPasswordCommand { get; set; }
+        public ICommand CopyUsernameCommand { get; set; }
         public string Name { get; set; }
         public string Url { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
         public string Notes { get; set; }
+        public string PasswordVisibility { get; set; }
+        public string PasswordBoxVisibility { get; set; }
         #endregion
     }
 }
