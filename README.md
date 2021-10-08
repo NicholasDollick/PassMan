@@ -1,4 +1,4 @@
-# QNTM State - Password Manager and Encrypted Container
+# QNTM State - Password Manager +  Encrypted Container
 
 ## Overview
 * This is a .NET Framework 4.7.2 project
@@ -8,7 +8,7 @@
 * Code-First database design
 
 ## Screenshots
-<img src="readmeimages/a.png" height="300">
-<img src="readmeimages/b.png" height="300">
-<img src="readmeimages/c.png" height="300">
-<img src="readmeimages/d.png" height="300">
+<img src="readmeimages/a.png" height="400">
+<img src="readmeimages/b.png" height="400">
+<img src="readmeimages/c.png" height="400">
+<img src="readmeimages/d.png" height="400">
